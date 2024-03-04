@@ -1,4 +1,4 @@
-extends Panel
+extends Control
 class_name LootPanel
 
 const LOOT_ITEM = preload("res://LootBoxes/loot_item.tscn");
@@ -25,12 +25,15 @@ func _process_loot_rate(shop_item_data):
 		opened_loot_item.append(instance_loot);
 	
 func update_loot_node_position(instance_loot: TextureButton):
-	var margin = 100; 
-	var target_pos_x = ((opened_loot_item.size() % 3) * 210) + margin;
-	var target_pos_y = ((opened_loot_item.size() / 3) * 210) + margin;
+	instance_loot.scale = Vector2.ZERO;
+	var margin = 30; 
+	var target_pos_x = ((opened_loot_item.size() % 3) * 340) + margin;
+	var target_pos_y = ((opened_loot_item.size() / 3) * 340) + margin;
 	var target_pos = Vector2(target_pos_x, target_pos_y);
 	var tween = get_tree().create_tween();
-	tween.tween_property(instance_loot, "position", target_pos, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT);
+	tween.set_parallel();
+	tween.tween_property(instance_loot, "position", target_pos, 0.5).set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_IN_OUT);
+	tween.tween_property(instance_loot, "scale", Vector2.ONE, 0.5).set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_IN_OUT);
 
 func get_lootbox_type(shop_item_data) -> String:
 	var total_rate = shop_item_data["wood_loot_rate"] + shop_item_data["bronze_loot_rate"] + shop_item_data["silver_loot_rate"] + shop_item_data["gold_loot_rate"] + shop_item_data["diamond_loot_rate"]
@@ -49,7 +52,6 @@ func get_lootbox_type(shop_item_data) -> String:
 	if random_number < (current_rate + shop_item_data["diamond_loot_rate"]):
 		possible_rewards.append("diamond");
 
-	
 	var chosen_reward = possible_rewards[randi() % possible_rewards.size()];
 	print("Received ", chosen_reward, " from the ", shop_item_data["name"], " lootbox!")
 	return chosen_reward;

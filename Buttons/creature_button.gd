@@ -30,9 +30,9 @@ func _update_item(item_price: int, item_image_url: String, item_name: String):
 	var texture_rect: TextureRect = get_node('TextureRect');
 	var name_label: Label = get_node('Name');
 	var price_label: Label = get_node('Price');
-	#texture_rect.texture = load(item_image_url);
-	#name_label.text = item_name;
-	#price_label.text = str(item_price);
+	texture_rect.texture = load(item_image_url);
+	name_label.text = item_name;
+	price_label.text = str(item_price);
 
 func _on_export_var_changes():
 	var item_price: int = 0;
