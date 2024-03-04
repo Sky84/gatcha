@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c77qdaonfnpyt"]
+[gd_scene load_steps=4 format=3 uid="uid://c77qdaonfnpyt"]
 
 [ext_resource type="PackedScene" uid="uid://3s6djvo4dlm1" path="res://Buttons/creature_button.tscn" id="1_6phqq"]
 [ext_resource type="Script" path="res://Shop.gd" id="1_dwfql"]
 [ext_resource type="Script" path="res://LootPanel.gd" id="3_3eft4"]
-[ext_resource type="Texture2D" uid="uid://lorlvw7qkcsl" path="res://LootBoxes/BronzeLootbox.png" id="4_h0nhs"]
 
 [node name="Game" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [872.0]
@@ -102,53 +101,26 @@ layout_mode = 2
 item_id = "x6"
 
 [node name="LootPanel" type="Panel" parent="Shop"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -685.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("3_3eft4")
 
-[node name="LootItemContainer" type="Control" parent="Shop/LootPanel"]
+[node name="StartLootPosition" type="Control" parent="Shop/LootPanel"]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -486.0
-offset_top = -913.5
-offset_right = 496.0
-offset_bottom = -129.5
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-
-[node name="LootBox" type="Button" parent="Shop/LootPanel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -290.5
-offset_top = -85.5
-offset_right = 290.5
-offset_bottom = 537.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextureRect" type="TextureRect" parent="Shop/LootPanel/LootBox"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 271.0
+offset_right = 20.0
+offset_bottom = 303.0
 grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_h0nhs")
-stretch_mode = 5
-
-[connection signal="pressed" from="Shop/LootPanel/LootBox" to="Shop/LootPanel" method="_on_loot_box_pressed"]
+grow_vertical = 0
