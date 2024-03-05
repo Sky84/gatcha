@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Boosts="*res://Data/Boosts.gd"
 Creatures="*res://Data/Creatures.gd"
 LootBoxes="*res://Data/LootBoxes.gd"
+Player="*res://Player/Player.gd"
 
 [display]
 

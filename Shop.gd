@@ -23,6 +23,7 @@ func _ready():
 	
 
 func _on_pressed_shop_item(shop_item: ShopItem):
+	shop_item.play_anim_pressed();
 	loot_panel.open(shop_item);
 
 func _on_shop_button_pressed():

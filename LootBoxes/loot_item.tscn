@@ -25,7 +25,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Label:rotation")
+tracks/1/path = NodePath("LabelName:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -33,6 +33,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.10472, 0.0, -0.10472, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TypeTexture:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 1, 1.2, 2),
+"transitions": PackedFloat32Array(1, 1.03526, 1, 1.03526, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sc3qb"]
@@ -63,11 +75,11 @@ offset_right = 83.0
 offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
-rotation = -0.106155
+rotation = 0.0586096
 pivot_offset = Vector2(83, 141.8)
 texture = ExtResource("3_x4vbo")
 
-[node name="Label" type="Label" parent="."]
+[node name="LabelName" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -77,13 +89,13 @@ offset_top = 7.0
 offset_right = 85.0
 offset_bottom = 42.0
 grow_horizontal = 2
-rotation = 0.0522073
+rotation = -0.0288245
 pivot_offset = Vector2(79, 17)
 text = "TODO NAME"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="."]
+[node name="LabelTime" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -110,7 +122,7 @@ texture = ExtResource("4_hb12w")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="TextureRect3" type="TextureRect" parent="."]
+[node name="TypeTexture" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -120,6 +132,8 @@ offset_top = 10.0
 offset_right = -27.0
 offset_bottom = 52.0
 grow_horizontal = 0
+scale = Vector2(1.06881, 1.06881)
+pivot_offset = Vector2(21, 21)
 texture = ExtResource("5_a3i8y")
 expand_mode = 1
 stretch_mode = 5

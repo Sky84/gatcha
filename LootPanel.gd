@@ -23,7 +23,14 @@ func _process_loot_rate(shop_item_data):
 		instance_loot.init_item(creature);
 		update_loot_node_position(instance_loot);
 		opened_loot_item.append(instance_loot);
-	
+		instance_loot.pressed.connect(_on_instance_loot_pressed.bind(instance_loot));
+		
+func _on_instance_loot_pressed(instance_loot: LootItem):
+	opened_loot_item.erase(instance_loot);
+	#TODO TWEEN BEFORE REMOVE
+	remove_child(instance_loot);
+	Player.add_creature(instance_loot.current_item);
+
 func update_loot_node_position(instance_loot: TextureButton):
 	instance_loot.scale = Vector2.ZERO;
 	var margin = 30; 
