@@ -1,16 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://c77qdaonfnpyt"]
+[gd_scene load_steps=11 format=3 uid="uid://c77qdaonfnpyt"]
 
 [ext_resource type="PackedScene" uid="uid://3s6djvo4dlm1" path="res://Buttons/creature_button.tscn" id="1_6phqq"]
 [ext_resource type="Script" path="res://Shop.gd" id="1_dwfql"]
 [ext_resource type="Script" path="res://LootPanel.gd" id="3_3eft4"]
 [ext_resource type="Texture2D" uid="uid://bquqji0c53xby" path="res://Assets/HUD/smallmenu.png" id="3_gur2h"]
 [ext_resource type="Texture2D" uid="uid://cpo10w4anfwcf" path="res://Assets/Images/backgroundfarm.png" id="4_4vsax"]
+[ext_resource type="Texture2D" uid="uid://cuf6t1pqngems" path="res://Assets/HUD/buttonshop.png" id="5_ilaal"]
+[ext_resource type="Texture2D" uid="uid://7pchtvd2dc2x" path="res://Assets/HUD/buttonpetdex.png" id="6_poxll"]
+[ext_resource type="Texture2D" uid="uid://cvnnn5ivs42w5" path="res://Assets/HUD/buttonenclosure.png" id="7_y3xnl"]
+[ext_resource type="Texture2D" uid="uid://n7reanhniaxg" path="res://Assets/HUD/buttonclose.png" id="8_c7i3v"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lecxe"]
 texture = ExtResource("3_gur2h")
 
 [node name="Game" type="Node2D"]
-metadata/_edit_horizontal_guides_ = [872.0]
 
 [node name="Background" type="TextureRect" parent="."]
 offset_left = -4.0
@@ -42,54 +45,67 @@ offset_top = -645.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxTexture_lecxe")
+tabs_visible = false
 
-[node name="LootBoxes" type="Control" parent="Shop/TabContainer"]
+[node name="Shop" type="Control" parent="Shop/TabContainer"]
 layout_mode = 2
 mouse_filter = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Shop/TabContainer/LootBoxes"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Shop/TabContainer/Shop"]
 layout_mode = 0
 offset_left = 55.0
 offset_top = 107.0
 offset_right = 1065.0
 offset_bottom = 581.0
 
-[node name="GridContainer" type="GridContainer" parent="Shop/TabContainer/LootBoxes/ScrollContainer"]
+[node name="GridContainer" type="GridContainer" parent="Shop/TabContainer/Shop/ScrollContainer"]
 custom_minimum_size = Vector2(1014, 442.21)
 layout_mode = 2
 columns = 999
 
-[node name="ShopItem" parent="Shop/TabContainer/LootBoxes/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
+[node name="ShopItem" parent="Shop/TabContainer/Shop/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
 layout_mode = 2
 item_id = "wood"
 item_type = 1
 
-[node name="ShopItem3" parent="Shop/TabContainer/LootBoxes/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
+[node name="ShopItem3" parent="Shop/TabContainer/Shop/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
 layout_mode = 2
 item_id = "bronze"
 item_type = 1
 
-[node name="ShopItem4" parent="Shop/TabContainer/LootBoxes/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
+[node name="ShopItem4" parent="Shop/TabContainer/Shop/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
 layout_mode = 2
 item_id = "silver"
 item_type = 1
 
-[node name="ShopItem5" parent="Shop/TabContainer/LootBoxes/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
+[node name="ShopItem5" parent="Shop/TabContainer/Shop/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
 layout_mode = 2
 item_id = "gold"
 item_type = 1
 
-[node name="ShopItem2" parent="Shop/TabContainer/LootBoxes/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
+[node name="ShopItem2" parent="Shop/TabContainer/Shop/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
 layout_mode = 2
 item_id = "diamond"
 item_type = 1
 
-[node name="Boosts" type="Control" parent="Shop/TabContainer"]
+[node name="ShopItem6" parent="Shop/TabContainer/Shop/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
+layout_mode = 2
+item_id = "x2"
+
+[node name="ShopItem7" parent="Shop/TabContainer/Shop/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
+layout_mode = 2
+item_id = "x4"
+
+[node name="ShopItem8" parent="Shop/TabContainer/Shop/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
+layout_mode = 2
+item_id = "x6"
+
+[node name="PetDex" type="Control" parent="Shop/TabContainer"]
 visible = false
 layout_mode = 2
 mouse_filter = 1
 
-[node name="ScrollContainer2" type="ScrollContainer" parent="Shop/TabContainer/Boosts"]
+[node name="ScrollContainer2" type="ScrollContainer" parent="Shop/TabContainer/PetDex"]
 layout_mode = 0
 offset_left = 55.0
 offset_top = 107.0
@@ -98,23 +114,86 @@ offset_bottom = 549.0
 mouse_filter = 0
 vertical_scroll_mode = 3
 
-[node name="GridContainer" type="GridContainer" parent="Shop/TabContainer/Boosts/ScrollContainer2"]
+[node name="GridContainer" type="GridContainer" parent="Shop/TabContainer/PetDex/ScrollContainer2"]
 custom_minimum_size = Vector2(1014, 554)
 layout_mode = 2
 mouse_filter = 0
 columns = 10
 
-[node name="ShopItem" parent="Shop/TabContainer/Boosts/ScrollContainer2/GridContainer" instance=ExtResource("1_6phqq")]
+[node name="Enclosure" type="Control" parent="Shop/TabContainer"]
+visible = false
 layout_mode = 2
-item_id = "x2"
+mouse_filter = 1
 
-[node name="ShopItem2" parent="Shop/TabContainer/Boosts/ScrollContainer2/GridContainer" instance=ExtResource("1_6phqq")]
-layout_mode = 2
-item_id = "x4"
+[node name="ScrollContainer2" type="ScrollContainer" parent="Shop/TabContainer/Enclosure"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 107.0
+offset_right = 1065.0
+offset_bottom = 549.0
+mouse_filter = 0
+vertical_scroll_mode = 3
 
-[node name="ShopItem3" parent="Shop/TabContainer/Boosts/ScrollContainer2/GridContainer" instance=ExtResource("1_6phqq")]
+[node name="GridContainer" type="GridContainer" parent="Shop/TabContainer/Enclosure/ScrollContainer2"]
+custom_minimum_size = Vector2(1014, 554)
 layout_mode = 2
-item_id = "x6"
+mouse_filter = 0
+columns = 10
+
+[node name="TabButtons" type="Control" parent="Shop"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -683.0
+offset_bottom = -549.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ShopButton" type="TextureButton" parent="Shop/TabButtons"]
+layout_mode = 0
+offset_left = 69.0
+offset_top = -16.0
+offset_right = 161.0
+offset_bottom = 74.0
+texture_normal = ExtResource("5_ilaal")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="PetDexButton" type="TextureButton" parent="Shop/TabButtons"]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 8.0
+offset_right = 271.0
+offset_bottom = 98.0
+texture_normal = ExtResource("6_poxll")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="EnclosureButton" type="TextureButton" parent="Shop/TabButtons"]
+layout_mode = 0
+offset_left = 289.0
+offset_top = 8.0
+offset_right = 381.0
+offset_bottom = 98.0
+texture_normal = ExtResource("7_y3xnl")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="CloseButton" type="TextureButton" parent="Shop/TabButtons"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -133.0
+offset_top = 8.0
+offset_right = -41.0
+offset_bottom = 98.0
+grow_horizontal = 0
+texture_normal = ExtResource("8_c7i3v")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="LootPanel" type="Control" parent="Shop"]
 layout_mode = 1
@@ -140,3 +219,8 @@ offset_right = 20.0
 offset_bottom = 303.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[connection signal="pressed" from="Shop/TabButtons/ShopButton" to="Shop" method="_on_shop_button_pressed"]
+[connection signal="pressed" from="Shop/TabButtons/PetDexButton" to="Shop" method="_on_pet_dex_button_pressed"]
+[connection signal="pressed" from="Shop/TabButtons/EnclosureButton" to="Shop" method="_on_enclosure_button_pressed"]
+[connection signal="pressed" from="Shop/TabButtons/CloseButton" to="Shop" method="_on_close_button_pressed"]
