@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cdqbw82odjn3a" path="res://Buttons/button.png" id="1_ja8p0"]
 [ext_resource type="Script" path="res://LootItem.gd" id="2_nxl3h"]
-[ext_resource type="Texture2D" uid="uid://mgqq6vw3mhoh" path="res://Assets/Images/bebeble_baby.png" id="3_x4vbo"]
+[ext_resource type="Texture2D" uid="uid://drvay7e0u6lee" path="res://Assets/Images/lezar_baby1.png" id="3_d3uah"]
 [ext_resource type="Texture2D" uid="uid://buku36rjx26uk" path="res://Buttons/coloruncomon.png" id="4_hb12w"]
 [ext_resource type="Texture2D" uid="uid://mt1xw5bmbb44" path="res://Buttons/stargold.png" id="5_a3i8y"]
 
@@ -75,9 +75,10 @@ offset_right = 83.0
 offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
-rotation = 0.0586096
 pivot_offset = Vector2(83, 141.8)
-texture = ExtResource("3_x4vbo")
+texture = ExtResource("3_d3uah")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="LabelName" type="Label" parent="."]
 layout_mode = 1
@@ -89,7 +90,6 @@ offset_top = 7.0
 offset_right = 85.0
 offset_bottom = 42.0
 grow_horizontal = 2
-rotation = -0.0288245
 pivot_offset = Vector2(79, 17)
 text = "TODO NAME"
 horizontal_alignment = 1
@@ -132,7 +132,6 @@ offset_top = 10.0
 offset_right = -27.0
 offset_bottom = 52.0
 grow_horizontal = 0
-scale = Vector2(1.06881, 1.06881)
 pivot_offset = Vector2(21, 21)
 texture = ExtResource("5_a3i8y")
 expand_mode = 1

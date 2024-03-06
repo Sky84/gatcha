@@ -29,5 +29,41 @@ var Creatures = {
 		},
 		"income_per_second": 5,
 		"selling_value": 300
+	},
+	"lezar": {
+		"species_name": "Lee-zar",
+		"visuals": {
+			"wood": {"baby": "res://Assets/Images/lezar_baby1.png", "adult": "res://Assets/Images/lezar1.png"},
+			"bronze": {"baby": "res://Assets/Images/lezar_baby2.png", "adult": "res://Assets/Images/lezar2.png"},
+			"silver": {"baby": "res://Assets/Images/lezar_baby3.png", "adult": "res://Assets/Images/lezar3.png"},
+			"gold": {"baby": "res://Assets/Images/lezar_baby3.png", "adult": "res://Assets/Images/lezar3.png"},
+			"diamond": {"baby": "res://Assets/Images/lezar_baby3.png", "adult": "res://Assets/Images/lezar3.png"},
+		},
+		"income_per_second": 5,
+		"selling_value": 300
+	},
+	"bear": {
+		"species_name": "Ours",
+		"visuals": {
+			"wood": {"baby": "res://Assets/Images/bear_baby1.png", "adult": "res://Assets/Images/bear1.png"},
+			"bronze": {"baby": "res://Assets/Images/bear_baby2.png", "adult": "res://Assets/Images/bear2.png"},
+			"silver": {"baby": "res://Assets/Images/bear_baby3.png", "adult": "res://Assets/Images/bear3.png"},
+			"gold": {"baby": "res://Assets/Images/bear_baby3.png", "adult": "res://Assets/Images/bear3.png"},
+			"diamond": {"baby": "res://Assets/Images/bear_baby3.png", "adult": "res://Assets/Images/bear3.png"},
+		},
+		"income_per_second": 5,
+		"selling_value": 300
+	},
+	"cerf": {
+		"species_name": "Cerf",
+		"visuals": {
+			"wood": {"baby": "res://Assets/Images/cerf_baby1.png", "adult": "res://Assets/Images/cerf1.png"},
+			"bronze": {"baby": "res://Assets/Images/cerf_baby2.png", "adult": "res://Assets/Images/cerf2.png"},
+			"silver": {"baby": "res://Assets/Images/cerf_baby3.png", "adult": "res://Assets/Images/cerf3.png"},
+			"gold": {"baby": "res://Assets/Images/cerf_baby3.png", "adult": "res://Assets/Images/cerf3.png"},
+			"diamond": {"baby": "res://Assets/Images/cerf_baby3.png", "adult": "res://Assets/Images/cerf3.png"},
+		},
+		"income_per_second": 5,
+		"selling_value": 300
 	}
 }

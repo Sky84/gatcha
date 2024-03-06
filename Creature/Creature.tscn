@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://cl4aolq1yxv6i"]
+
+[ext_resource type="Script" path="res://Creature/CreatureController.gd" id="1_tktly"]
+[ext_resource type="Texture2D" uid="uid://blkl21qs0cjrq" path="res://Assets/Images/bebeble_baby2.png" id="2_rxhl5"]
+
+[sub_resource type="Animation" id="Animation_71pmr"]
+resource_name = "jump"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(0.5, 2, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -10), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(0.5, 2, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kdw4r"]
+_data = {
+"jump": SubResource("Animation_71pmr")
+}
+
+[node name="Creature" type="TextureButton"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -714.0
+offset_bottom = -1554.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(183, 350)
+script = ExtResource("1_tktly")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kdw4r")
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 366.0
+offset_bottom = 366.0
+pivot_offset = Vector2(183, 350)
+texture = ExtResource("2_rxhl5")
+expand_mode = 1
+stretch_mode = 5

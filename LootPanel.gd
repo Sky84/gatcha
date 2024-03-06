@@ -20,6 +20,7 @@ func _process_loot_rate(shop_item_data):
 		add_child(instance_loot);
 		instance_loot.position = start_loot_position;
 		creature.type = loot_type;
+		creature.age = "baby";
 		instance_loot.init_item(creature);
 		update_loot_node_position(instance_loot);
 		opened_loot_item.append(instance_loot);
