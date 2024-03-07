@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://cnbahcko3borr"]
+
+[ext_resource type="Texture2D" uid="uid://y0yxdfu4fhy6" path="res://Assets/HUD/button.png" id="1_8nhit"]
+[ext_resource type="Script" path="res://PetDex/petdex_creature_item.gd" id="2_84fy2"]
+[ext_resource type="Texture2D" uid="uid://drvay7e0u6lee" path="res://Assets/Images/lezar_baby1.png" id="3_d7vv5"]
+[ext_resource type="Texture2D" uid="uid://buku36rjx26uk" path="res://Buttons/coloruncomon.png" id="4_brch7"]
+[ext_resource type="Texture2D" uid="uid://mt1xw5bmbb44" path="res://Buttons/stargold.png" id="5_6vcyr"]
+
+[node name="PetDexCreatureItem" type="TextureButton"]
+self_modulate = Color(0.72549, 0.72549, 0.870588, 1)
+texture_filter = 1
+custom_minimum_size = Vector2(250, 250)
+texture_normal = ExtResource("1_8nhit")
+stretch_mode = 5
+script = ExtResource("2_84fy2")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 37.0
+offset_top = 19.0
+offset_right = -40.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(135, 141.8)
+texture = ExtResource("3_d7vv5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.977
+anchor_right = 1.0
+anchor_bottom = 0.977
+offset_left = 176.0
+offset_top = -20.996
+offset_right = -123.0
+offset_bottom = 21.004
+texture = ExtResource("4_brch7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TypeTexture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 117.0
+offset_top = -31.0
+offset_right = -189.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(21, 21)
+texture = ExtResource("5_6vcyr")
+expand_mode = 1
+stretch_mode = 5

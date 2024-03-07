@@ -1,5 +1,5 @@
 extends Control
-class_name Shop
+class_name Menu
 
 @onready var loot_panel: LootPanel = $LootPanel;
 
@@ -14,6 +14,7 @@ enum TAB_INDEX {
 
 @onready var tab_buttons = $TabButtons
 @onready var tab_container = $TabContainer
+@onready var petdex_panel = $PetDexPanel;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,13 +32,16 @@ func _on_shop_button_pressed():
 
 func _on_pet_dex_button_pressed():
 	_change_tab(TAB_INDEX.PET_DEX);
+	var tween = create_tween();
+	tween.tween_property(petdex_panel, "position:y", 0, 0.5).set_trans(Tween.TRANS_BACK);
+	petdex_panel.init_panel();
 
 func _on_enclosure_button_pressed():
 	_change_tab(TAB_INDEX.ENCLOSURE);
 
 func _on_close_button_pressed():
 	var tween = create_tween();
-	tween.set_parallel()
+	tween.set_parallel();
 	var opened_menu_pos_y = 1276;
 	var hidden_menu_pos_y = 1276 * 2;
 	var tab_container_target_pos_y = opened_menu_pos_y if tab_container.position.y == hidden_menu_pos_y else hidden_menu_pos_y;

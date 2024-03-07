@@ -5,6 +5,8 @@ class ICreature:
 	var income_per_second: int;
 	var selling_value: int;
 
+const MAX_CREATURES = 25;
+
 var Creatures = {
 	"bebeble": {
 		"species_name": "Bebeble",
@@ -67,3 +69,6 @@ var Creatures = {
 		"selling_value": 300
 	}
 }
+
+func get_creature_id(creature_data):
+	return creature_data.type+"_"+creature_data.species_name;

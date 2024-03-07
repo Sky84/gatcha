@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://blrb2h10bjlrm"]
+
+[ext_resource type="Script" path="res://PetDex/petdex_creature_row.gd" id="1_fh8dw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_272ig"]
+font_size = 24
+
+[node name="PetdexCreatureRow" type="Control"]
+custom_minimum_size = Vector2(1760, 400)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fh8dw")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 1756.0
+offset_bottom = 388.0
+columns = 5
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "????"
+label_settings = SubResource("LabelSettings_272ig")
+horizontal_alignment = 1
+vertical_alignment = 1

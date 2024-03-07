@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c77qdaonfnpyt"]
+[gd_scene load_steps=18 format=3 uid="uid://c77qdaonfnpyt"]
 
 [ext_resource type="PackedScene" uid="uid://3s6djvo4dlm1" path="res://Buttons/creature_button.tscn" id="1_6phqq"]
 [ext_resource type="Script" path="res://Shop.gd" id="1_dwfql"]
@@ -6,47 +6,120 @@
 [ext_resource type="Texture2D" uid="uid://bquqji0c53xby" path="res://Assets/HUD/smallmenu.png" id="3_gur2h"]
 [ext_resource type="Texture2D" uid="uid://cpo10w4anfwcf" path="res://Assets/Images/backgroundfarm.png" id="4_4vsax"]
 [ext_resource type="Texture2D" uid="uid://cuf6t1pqngems" path="res://Assets/HUD/buttonshop.png" id="5_ilaal"]
+[ext_resource type="Script" path="res://Enclosure.gd" id="5_lot1b"]
 [ext_resource type="Texture2D" uid="uid://7pchtvd2dc2x" path="res://Assets/HUD/buttonpetdex.png" id="6_poxll"]
 [ext_resource type="Texture2D" uid="uid://cvnnn5ivs42w5" path="res://Assets/HUD/buttonenclosure.png" id="7_y3xnl"]
 [ext_resource type="Texture2D" uid="uid://n7reanhniaxg" path="res://Assets/HUD/buttonclose.png" id="8_c7i3v"]
+[ext_resource type="Script" path="res://PetDexPanel.gd" id="11_r223i"]
+[ext_resource type="Texture2D" uid="uid://7fmkrwiiur3d" path="res://Assets/HUD/topbarleft.png" id="12_gv3ss"]
+[ext_resource type="Texture2D" uid="uid://wdexlbmjn8ht" path="res://Assets/HUD/topbarright.png" id="13_myleh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q1ayt"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_5t7fp"]
+font_size = 32
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lecxe"]
 texture = ExtResource("3_gur2h")
 
+[sub_resource type="LabelSettings" id="LabelSettings_2f17a"]
+font_size = 64
+
 [node name="Game" type="Node2D"]
 
-[node name="Background" type="TextureRect" parent="."]
-offset_left = -4.0
-offset_top = -2.0
-offset_right = 1076.0
-offset_bottom = 1920.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("4_4vsax")
 stretch_mode = 6
 
-[node name="CreatureContainer" type="Control" parent="Background"]
+[node name="CreatureContainer" type="Control" parent="CanvasLayer/Background"]
+y_sort_enabled = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 71.0
-offset_top = 506.0
-offset_right = -81.0
-offset_bottom = -274.0
+offset_left = 120.0
+offset_top = 504.0
+offset_right = -140.0
+offset_bottom = -172.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Shop" type="Control" parent="."]
+[node name="HUD" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Coin" type="TextureRect" parent="CanvasLayer/HUD"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("12_gv3ss")
+
+[node name="Label" type="Label" parent="CanvasLayer/HUD/Coin"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 103.0
+offset_top = 20.0
+offset_right = -22.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "257442"
+label_settings = SubResource("LabelSettings_q1ayt")
+vertical_alignment = 1
+
+[node name="CreatureMax" type="TextureRect" parent="CanvasLayer/HUD"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -327.0
+offset_bottom = 96.0
+grow_horizontal = 0
+texture = ExtResource("13_myleh")
+
+[node name="Label" type="Label" parent="CanvasLayer/HUD/CreatureMax"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 131.0
+offset_top = 21.0
+offset_right = -35.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0/25"
+label_settings = SubResource("LabelSettings_5t7fp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Menu" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
+offset_top = -1920.0
 offset_right = 1082.0
-offset_bottom = 1921.0
+offset_bottom = 1.0
 grow_vertical = 0
 mouse_filter = 1
 script = ExtResource("1_dwfql")
 
-[node name="TabContainer" type="TabContainer" parent="Shop"]
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer/Menu"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -59,100 +132,101 @@ grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxTexture_lecxe")
 tabs_visible = false
 
-[node name="Shop" type="Control" parent="Shop/TabContainer"]
+[node name="Shop" type="Control" parent="CanvasLayer/Menu/TabContainer"]
 layout_mode = 2
 mouse_filter = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Shop/TabContainer/Shop"]
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/Menu/TabContainer/Shop"]
 layout_mode = 0
 offset_left = 55.0
 offset_top = 107.0
 offset_right = 1065.0
 offset_bottom = 581.0
 
-[node name="GridContainer" type="GridContainer" parent="Shop/TabContainer/Shop/ScrollContainer"]
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Menu/TabContainer/Shop/ScrollContainer"]
 custom_minimum_size = Vector2(1014, 442.21)
 layout_mode = 2
 columns = 999
 
-[node name="ShopItem" parent="Shop/TabContainer/Shop/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
+[node name="ShopItem" parent="CanvasLayer/Menu/TabContainer/Shop/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
 layout_mode = 2
 item_id = "wood"
 item_type = 1
 
-[node name="ShopItem3" parent="Shop/TabContainer/Shop/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
+[node name="ShopItem3" parent="CanvasLayer/Menu/TabContainer/Shop/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
 layout_mode = 2
 item_id = "bronze"
 item_type = 1
 
-[node name="ShopItem4" parent="Shop/TabContainer/Shop/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
+[node name="ShopItem4" parent="CanvasLayer/Menu/TabContainer/Shop/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
 layout_mode = 2
 item_id = "silver"
 item_type = 1
 
-[node name="ShopItem5" parent="Shop/TabContainer/Shop/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
+[node name="ShopItem5" parent="CanvasLayer/Menu/TabContainer/Shop/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
 layout_mode = 2
 item_id = "gold"
 item_type = 1
 
-[node name="ShopItem2" parent="Shop/TabContainer/Shop/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
+[node name="ShopItem2" parent="CanvasLayer/Menu/TabContainer/Shop/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
 layout_mode = 2
 item_id = "diamond"
 item_type = 1
 
-[node name="ShopItem6" parent="Shop/TabContainer/Shop/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
+[node name="ShopItem6" parent="CanvasLayer/Menu/TabContainer/Shop/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
 layout_mode = 2
 item_id = "x2"
 
-[node name="ShopItem7" parent="Shop/TabContainer/Shop/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
+[node name="ShopItem7" parent="CanvasLayer/Menu/TabContainer/Shop/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
 layout_mode = 2
 item_id = "x4"
 
-[node name="ShopItem8" parent="Shop/TabContainer/Shop/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
+[node name="ShopItem8" parent="CanvasLayer/Menu/TabContainer/Shop/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
 layout_mode = 2
 item_id = "x6"
 
-[node name="PetDex" type="Control" parent="Shop/TabContainer"]
+[node name="PetDex" type="Control" parent="CanvasLayer/Menu/TabContainer"]
 visible = false
 layout_mode = 2
 mouse_filter = 1
 
-[node name="ScrollContainer2" type="ScrollContainer" parent="Shop/TabContainer/PetDex"]
+[node name="ScrollContainer2" type="ScrollContainer" parent="CanvasLayer/Menu/TabContainer/PetDex"]
+visible = false
 layout_mode = 0
 offset_left = 55.0
 offset_top = 107.0
 offset_right = 1065.0
-offset_bottom = 549.0
+offset_bottom = 581.0
 mouse_filter = 0
 vertical_scroll_mode = 3
 
-[node name="GridContainer" type="GridContainer" parent="Shop/TabContainer/PetDex/ScrollContainer2"]
-custom_minimum_size = Vector2(1014, 554)
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Menu/TabContainer/PetDex/ScrollContainer2"]
+custom_minimum_size = Vector2(1010, 554)
 layout_mode = 2
 mouse_filter = 0
 columns = 10
 
-[node name="Enclosure" type="Control" parent="Shop/TabContainer"]
+[node name="Enclosure" type="Control" parent="CanvasLayer/Menu/TabContainer"]
 visible = false
 layout_mode = 2
 mouse_filter = 1
+script = ExtResource("5_lot1b")
 
-[node name="ScrollContainer2" type="ScrollContainer" parent="Shop/TabContainer/Enclosure"]
+[node name="ScrollContainer2" type="ScrollContainer" parent="CanvasLayer/Menu/TabContainer/Enclosure"]
 layout_mode = 0
 offset_left = 55.0
 offset_top = 107.0
 offset_right = 1065.0
-offset_bottom = 549.0
+offset_bottom = 581.0
 mouse_filter = 0
-vertical_scroll_mode = 3
 
-[node name="GridContainer" type="GridContainer" parent="Shop/TabContainer/Enclosure/ScrollContainer2"]
-custom_minimum_size = Vector2(1014, 554)
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Menu/TabContainer/Enclosure/ScrollContainer2"]
+custom_minimum_size = Vector2(1010, 442.21)
 layout_mode = 2
 mouse_filter = 0
-columns = 10
+columns = 999
 
-[node name="TabButtons" type="Control" parent="Shop"]
+[node name="TabButtons" type="Control" parent="CanvasLayer/Menu"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -163,7 +237,7 @@ offset_bottom = -549.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="ShopButton" type="TextureButton" parent="Shop/TabButtons"]
+[node name="ShopButton" type="TextureButton" parent="CanvasLayer/Menu/TabButtons"]
 layout_mode = 0
 offset_left = 69.0
 offset_top = -16.0
@@ -173,7 +247,7 @@ texture_normal = ExtResource("5_ilaal")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="PetDexButton" type="TextureButton" parent="Shop/TabButtons"]
+[node name="PetDexButton" type="TextureButton" parent="CanvasLayer/Menu/TabButtons"]
 layout_mode = 0
 offset_left = 179.0
 offset_top = 8.0
@@ -183,7 +257,7 @@ texture_normal = ExtResource("6_poxll")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="EnclosureButton" type="TextureButton" parent="Shop/TabButtons"]
+[node name="EnclosureButton" type="TextureButton" parent="CanvasLayer/Menu/TabButtons"]
 layout_mode = 0
 offset_left = 289.0
 offset_top = 8.0
@@ -193,7 +267,7 @@ texture_normal = ExtResource("7_y3xnl")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="CloseButton" type="TextureButton" parent="Shop/TabButtons"]
+[node name="CloseButton" type="TextureButton" parent="CanvasLayer/Menu/TabButtons"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -207,7 +281,7 @@ texture_normal = ExtResource("8_c7i3v")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="LootPanel" type="Control" parent="Shop"]
+[node name="LootPanel" type="Control" parent="CanvasLayer/Menu"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -218,7 +292,7 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("3_3eft4")
 
-[node name="StartLootPosition" type="Control" parent="Shop/LootPanel"]
+[node name="StartLootPosition" type="Control" parent="CanvasLayer/Menu/LootPanel"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -232,7 +306,97 @@ offset_bottom = 303.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[connection signal="pressed" from="Shop/TabButtons/ShopButton" to="Shop" method="_on_shop_button_pressed"]
-[connection signal="pressed" from="Shop/TabButtons/PetDexButton" to="Shop" method="_on_pet_dex_button_pressed"]
-[connection signal="pressed" from="Shop/TabButtons/EnclosureButton" to="Shop" method="_on_enclosure_button_pressed"]
-[connection signal="pressed" from="Shop/TabButtons/CloseButton" to="Shop" method="_on_close_button_pressed"]
+[node name="PetDexPanel" type="Control" parent="CanvasLayer/Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1914.0
+offset_bottom = 1914.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11_r223i")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/Menu/PetDexPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 29.0
+offset_top = 22.0
+offset_right = -35.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_gur2h")
+patch_margin_left = 50
+patch_margin_top = 50
+patch_margin_right = 50
+patch_margin_bottom = 50
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="CanvasLayer/Menu/PetDexPanel/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = 162.0
+offset_right = -20.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+vertical_scroll_mode = 3
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Menu/PetDexPanel/NinePatchRect/ScrollContainer2"]
+custom_minimum_size = Vector2(965.72, 1010)
+layout_mode = 2
+mouse_filter = 0
+
+[node name="Header" type="NinePatchRect" parent="CanvasLayer/Menu/PetDexPanel/NinePatchRect"]
+layout_mode = 1
+offset_top = -320.0
+offset_right = 1017.0
+offset_bottom = -156.0
+scale = Vector2(-1, -1)
+pivot_offset = Vector2(508, 242)
+texture = ExtResource("3_gur2h")
+patch_margin_left = 50
+patch_margin_top = 50
+patch_margin_right = 50
+patch_margin_bottom = 50
+
+[node name="CloseButton" type="TextureButton" parent="CanvasLayer/Menu/PetDexPanel/NinePatchRect/Header"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = -117.0
+offset_right = 120.0
+offset_bottom = -27.0
+grow_vertical = 0
+texture_normal = ExtResource("8_c7i3v")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/Menu/PetDexPanel/NinePatchRect/Header"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(-1, -1)
+pivot_offset = Vector2(508, 82)
+text = "Collection"
+label_settings = SubResource("LabelSettings_2f17a")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="visibility_changed" from="CanvasLayer/Menu/TabContainer/Enclosure" to="CanvasLayer/Menu/TabContainer/Enclosure" method="_on_visibility_changed"]
+[connection signal="pressed" from="CanvasLayer/Menu/TabButtons/ShopButton" to="CanvasLayer/Menu" method="_on_shop_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu/TabButtons/PetDexButton" to="CanvasLayer/Menu" method="_on_pet_dex_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu/TabButtons/EnclosureButton" to="CanvasLayer/Menu" method="_on_enclosure_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu/TabButtons/CloseButton" to="CanvasLayer/Menu" method="_on_close_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu/PetDexPanel/NinePatchRect/Header/CloseButton" to="CanvasLayer/Menu/PetDexPanel" method="_on_close_button_pressed"]
