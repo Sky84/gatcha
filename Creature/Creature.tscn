@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cl4aolq1yxv6i"]
+[gd_scene load_steps=7 format=3 uid="uid://cl4aolq1yxv6i"]
 
 [ext_resource type="Script" path="res://Creature/CreatureController.gd" id="1_tktly"]
 [ext_resource type="Texture2D" uid="uid://blkl21qs0cjrq" path="res://Assets/Images/bebeble_baby2.png" id="2_rxhl5"]
@@ -45,9 +45,26 @@ tracks/2/keys = {
 "values": [Vector2(1, 1), Vector2(0.8, 0.8), Vector2(1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_gam2q"]
+resource_name = "spawn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 9.84914, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1.3, 1.3), Vector2(0.9, 0.9), Vector2(1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kdw4r"]
 _data = {
-"jump": SubResource("Animation_71pmr")
+"jump": SubResource("Animation_71pmr"),
+"spawn": SubResource("Animation_gam2q")
 }
 
 [node name="Creature" type="TextureButton"]
@@ -88,9 +105,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -183.0
-offset_top = -342.0
+offset_top = -343.0
 offset_right = 183.0
-offset_bottom = 24.0
+offset_bottom = 23.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(183, 350)

@@ -29,9 +29,10 @@ Save="*res://Data/Save.gd"
 window/size/viewport_width=1080
 window/size/viewport_height=1920
 window/size/mode=2
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 window/handheld/orientation=1
 
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

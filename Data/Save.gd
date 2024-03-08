@@ -30,7 +30,7 @@ func save_data():
 	file.close();
 
 func _notification(notification):
-	if notification == NOTIFICATION_WM_CLOSE_REQUEST:       
+	if notification == NOTIFICATION_WM_CLOSE_REQUEST or notification == NOTIFICATION_WM_GO_BACK_REQUEST:       
 		save_data();
 		get_tree().quit();
 

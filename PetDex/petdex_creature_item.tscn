@@ -10,6 +10,7 @@
 self_modulate = Color(0.72549, 0.72549, 0.870588, 1)
 texture_filter = 1
 custom_minimum_size = Vector2(250, 250)
+mouse_filter = 1
 texture_normal = ExtResource("1_8nhit")
 stretch_mode = 5
 script = ExtResource("2_84fy2")

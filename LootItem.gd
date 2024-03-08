@@ -12,11 +12,11 @@ enum ITEM_RARITY {
 var item_id: String = '';
 var item_rarity: ITEM_RARITY;
 @onready var texture_rect = $TextureRect;
-@onready var animation_player = $AnimationPlayer
-@onready var label_name = $LabelName
-@onready var label_time = $LabelTime
-@onready var texture_rect_rarity_type = $TextureRect2
-@onready var texture_rect_type = $TypeTexture
+@onready var animation_player = $AnimationPlayer;
+@onready var label_name = $LabelName;
+@onready var label_time = $LabelTime;
+@onready var texture_rect_rarity_type = $TextureRect2;
+@onready var texture_rect_type = $TypeTexture;
 
 var current_item: Dictionary;
 

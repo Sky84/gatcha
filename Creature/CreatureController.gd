@@ -9,6 +9,9 @@ class_name CreatureController
 
 var _destination;
 
+func _ready():
+	animation_player.play("spawn");
+
 func init_creature(creature_data: Dictionary):
 	texture_rect.texture = load(creature_data.visuals[creature_data.type][creature_data.age]);
 

@@ -1,15 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://cm35o7dxxp1hy"]
+[gd_scene load_steps=8 format=3 uid="uid://cm35o7dxxp1hy"]
 
 [ext_resource type="Texture2D" uid="uid://cdqbw82odjn3a" path="res://Buttons/button.png" id="1_dk4hn"]
 [ext_resource type="Texture2D" uid="uid://drvay7e0u6lee" path="res://Assets/Images/lezar_baby1.png" id="2_tmgvu"]
 [ext_resource type="Script" path="res://Buttons/enclosure_creature_item.gd" id="2_y72ma"]
 [ext_resource type="Texture2D" uid="uid://buku36rjx26uk" path="res://Buttons/coloruncomon.png" id="3_p8fku"]
 [ext_resource type="Texture2D" uid="uid://mt1xw5bmbb44" path="res://Buttons/stargold.png" id="4_6q2ae"]
+[ext_resource type="FontFile" uid="uid://b5a46sti26c7u" path="res://8-bit-pusab.ttf" id="4_e7cve"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n5b0l"]
+font = ExtResource("4_e7cve")
+font_size = 20
 
 [node name="EnclosureCreatureItem" type="TextureButton"]
 self_modulate = Color(0.72549, 0.72549, 0.870588, 1)
 texture_filter = 1
 custom_minimum_size = Vector2(250, 250)
+mouse_filter = 1
 texture_normal = ExtResource("1_dk4hn")
 stretch_mode = 5
 script = ExtResource("2_y72ma")
@@ -42,6 +48,7 @@ offset_bottom = 54.0
 grow_horizontal = 2
 pivot_offset = Vector2(79, 17)
 text = "TODO NAME"
+label_settings = SubResource("LabelSettings_n5b0l")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -59,10 +66,12 @@ offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "TODO TIME"
+label_settings = SubResource("LabelSettings_n5b0l")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 21.0
 offset_top = 20.0
 offset_right = 70.0

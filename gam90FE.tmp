@@ -13,18 +13,18 @@
 [ext_resource type="Script" path="res://PetDexPanel.gd" id="11_r223i"]
 [ext_resource type="Texture2D" uid="uid://7fmkrwiiur3d" path="res://Assets/HUD/topbarleft.png" id="12_gv3ss"]
 [ext_resource type="Texture2D" uid="uid://wdexlbmjn8ht" path="res://Assets/HUD/topbarright.png" id="13_myleh"]
-[ext_resource type="FontFile" uid="uid://b5a46sti26c7u" path="res://8-bit-pusab.ttf" id="14_otaqa"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_n5b0l"]
-font = ExtResource("14_otaqa")
-font_size = 20
+[sub_resource type="LabelSettings" id="LabelSettings_q1ayt"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_5t7fp"]
+font_size = 32
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lecxe"]
 texture = ExtResource("3_gur2h")
 
 [sub_resource type="LabelSettings" id="LabelSettings_2f17a"]
-font = ExtResource("14_otaqa")
-font_size = 32
+font_size = 64
 
 [node name="Game" type="Node2D"]
 
@@ -78,7 +78,7 @@ offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "257442"
-label_settings = SubResource("LabelSettings_n5b0l")
+label_settings = SubResource("LabelSettings_q1ayt")
 vertical_alignment = 1
 
 [node name="CreatureMax" type="TextureRect" parent="CanvasLayer/HUD"]
@@ -102,9 +102,8 @@ offset_right = -35.0
 offset_bottom = -23.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(80, 26)
 text = "0/25"
-label_settings = SubResource("LabelSettings_n5b0l")
+label_settings = SubResource("LabelSettings_5t7fp")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -219,10 +218,12 @@ offset_left = 55.0
 offset_top = 107.0
 offset_right = 1065.0
 offset_bottom = 581.0
+mouse_filter = 0
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/Menu/TabContainer/Enclosure/ScrollContainer2"]
 custom_minimum_size = Vector2(1010, 442.21)
 layout_mode = 2
+mouse_filter = 0
 columns = 999
 
 [node name="TabButtons" type="Control" parent="CanvasLayer/Menu"]
@@ -344,11 +345,13 @@ offset_right = -20.0
 offset_bottom = -25.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
 vertical_scroll_mode = 3
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/Menu/PetDexPanel/NinePatchRect/ScrollContainer2"]
 custom_minimum_size = Vector2(965.72, 1010)
 layout_mode = 2
+mouse_filter = 0
 
 [node name="Header" type="NinePatchRect" parent="CanvasLayer/Menu/PetDexPanel/NinePatchRect"]
 layout_mode = 1

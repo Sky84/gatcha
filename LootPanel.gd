@@ -5,6 +5,9 @@ const LOOT_ITEM = preload("res://LootBoxes/loot_item.tscn");
 
 var opened_loot_item: Array = [];
 
+var wait_is_looting_anim_process = false;
+signal is_looting_anim_process;
+
 @onready var start_loot_position: Vector2 = $StartLootPosition.global_position;
 
 func open(shop_item: ShopItem):
@@ -26,12 +29,19 @@ func _process_loot_rate(shop_item_data):
 		update_loot_node_position(instance_loot);
 		opened_loot_item.append(instance_loot);
 		instance_loot.pressed.connect(_on_instance_loot_pressed.bind(instance_loot));
-		
+	else:
+		for i in range(opened_loot_item.size() -1, -1, -1):
+			_on_instance_loot_pressed(opened_loot_item[i]);
+
 func _on_instance_loot_pressed(instance_loot: LootItem):
 	opened_loot_item.erase(instance_loot);
-	#TODO TWEEN BEFORE REMOVE
+	var tween = get_tree().create_tween();
+	var target_pos = Vector2(700, -400);
+	tween.tween_property(instance_loot, "position", target_pos, 0.5).set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_IN_OUT);
+	await tween.finished;
 	remove_child(instance_loot);
 	Player.add_creature(instance_loot.current_item);
+	Save.save_data();
 
 func update_loot_node_position(instance_loot: TextureButton):
 	instance_loot.scale = Vector2.ZERO;
@@ -62,7 +72,6 @@ func get_lootbox_type(shop_item_data) -> String:
 		possible_rewards.append("diamond");
 
 	var chosen_reward = possible_rewards[randi() % possible_rewards.size()];
-	print("Received ", chosen_reward, " from the ", shop_item_data["name"], " lootbox!")
 	return chosen_reward;
 
 func get_random_creature() -> Dictionary:

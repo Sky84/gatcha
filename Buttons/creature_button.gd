@@ -32,6 +32,10 @@ func play_anim_pressed():
 	animation_player.stop();
 	animation_player.play("pressed");
 
+func play_anim_blocked():
+	animation_player.stop();
+	animation_player.play("blocked");
+
 func _update_item(item_price: int, item_image_url: String, item_name: String):
 	var texture_rect: TextureRect = get_node('TextureRect');
 	var name_label: Label = get_node('Name');

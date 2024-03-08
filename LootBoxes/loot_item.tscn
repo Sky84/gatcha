@@ -1,10 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8y2i2ladam5p"]
+[gd_scene load_steps=10 format=3 uid="uid://c8y2i2ladam5p"]
 
 [ext_resource type="Texture2D" uid="uid://cdqbw82odjn3a" path="res://Buttons/button.png" id="1_ja8p0"]
 [ext_resource type="Script" path="res://LootItem.gd" id="2_nxl3h"]
 [ext_resource type="Texture2D" uid="uid://drvay7e0u6lee" path="res://Assets/Images/lezar_baby1.png" id="3_d3uah"]
 [ext_resource type="Texture2D" uid="uid://buku36rjx26uk" path="res://Buttons/coloruncomon.png" id="4_hb12w"]
+[ext_resource type="FontFile" uid="uid://b5a46sti26c7u" path="res://8-bit-pusab.ttf" id="4_wly33"]
 [ext_resource type="Texture2D" uid="uid://mt1xw5bmbb44" path="res://Buttons/stargold.png" id="5_a3i8y"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dnlkv"]
+font = ExtResource("4_wly33")
+font_size = 12
 
 [sub_resource type="Animation" id="Animation_8h0fq"]
 resource_name = "default_shake"
@@ -57,6 +62,7 @@ texture_filter = 1
 custom_minimum_size = Vector2(332, 325)
 offset_right = 303.0
 offset_bottom = 303.0
+mouse_filter = 1
 texture_normal = ExtResource("1_ja8p0")
 ignore_texture_size = true
 stretch_mode = 5
@@ -75,7 +81,7 @@ offset_right = 83.0
 offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
-rotation = -0.170344
+rotation = -0.21293
 pivot_offset = Vector2(83, 141.8)
 texture = ExtResource("3_d3uah")
 expand_mode = 1
@@ -91,9 +97,10 @@ offset_top = 7.0
 offset_right = 85.0
 offset_bottom = 42.0
 grow_horizontal = 2
-rotation = 0.083776
+rotation = 0.10472
 pivot_offset = Vector2(79, 17)
 text = "TODO NAME"
+label_settings = SubResource("LabelSettings_dnlkv")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -111,6 +118,7 @@ offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "TODO TIME"
+label_settings = SubResource("LabelSettings_dnlkv")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -134,7 +142,7 @@ offset_top = 10.0
 offset_right = -27.0
 offset_bottom = 52.0
 grow_horizontal = 0
-scale = Vector2(1.05121, 1.05121)
+scale = Vector2(1.06377, 1.06377)
 pivot_offset = Vector2(21, 21)
 texture = ExtResource("5_a3i8y")
 expand_mode = 1

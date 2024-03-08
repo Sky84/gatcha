@@ -26,6 +26,7 @@ func add_creature(creature_data: Dictionary, from_save: bool = false):
 	creature_instance.global_position = random_position;
 	creature_instance.init_creature(creature_data);
 	creature_instance.init_pathfinding(creature_container.size);
+	_update_HUD();
 
 func have_already_seen_creature(creature_data) -> bool:
 	var creature_id = Creatures.get_creature_id(creature_data);
@@ -44,6 +45,7 @@ func _load_save():
 		await creature_container.ready;
 	for i in Player.current_creatures.size():
 		Player.add_creature(Player.current_creatures[i], true);
-	
+
+func _update_HUD():
 	creature_max_label.text = str(Player.current_creatures.size())+"/"+str(Creatures.MAX_CREATURES);
 	coin_label.text = str(Player.money);
