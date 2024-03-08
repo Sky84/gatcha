@@ -14,6 +14,7 @@ func get_save():
 		var json = JSON.parse_string(file.get_as_text());
 		return {
 			"current_creatures": json["current_creatures"],
+			"locked_creatures": json["locked_creatures"] if "locked_creatures" in json else [],
 			"petdex": json["petdex"],
 			"money": json["money"]
 		}
@@ -22,6 +23,7 @@ func get_save():
 func save_data():
 	var data_to_save = {
 			"current_creatures": Player.current_creatures,
+			"locked_creatures": Player.locked_creatures,
 			"petdex": Player.petdex,
 			"money": Player.money
 		};

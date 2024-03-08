@@ -8,11 +8,13 @@ class_name CreatureController
 @onready var texture_rect = $TextureRect
 
 var _destination;
+var id: String;
 
 func _ready():
 	animation_player.play("spawn");
 
 func init_creature(creature_data: Dictionary):
+	id = creature_data.id;
 	texture_rect.texture = load(creature_data.visuals[creature_data.type][creature_data.age]);
 
 func init_pathfinding(max_size:Vector2):

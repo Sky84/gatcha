@@ -45,7 +45,7 @@ var Creatures = {
 		"selling_value": 300
 	},
 	"bear": {
-		"species_name": "Ours",
+		"species_name": "Oursi",
 		"visuals": {
 			"wood": {"baby": "res://Assets/Images/bear_baby1.png", "adult": "res://Assets/Images/bear1.png"},
 			"bronze": {"baby": "res://Assets/Images/bear_baby2.png", "adult": "res://Assets/Images/bear2.png"},
@@ -57,7 +57,7 @@ var Creatures = {
 		"selling_value": 300
 	},
 	"cerf": {
-		"species_name": "Cerf",
+		"species_name": "Cerfo",
 		"visuals": {
 			"wood": {"baby": "res://Assets/Images/cerf_baby1.png", "adult": "res://Assets/Images/cerf1.png"},
 			"bronze": {"baby": "res://Assets/Images/cerf_baby2.png", "adult": "res://Assets/Images/cerf2.png"},
@@ -67,8 +67,29 @@ var Creatures = {
 		},
 		"income_per_second": 5,
 		"selling_value": 300
+	},
+	"piaff": {
+		"species_name": "Piaff",
+		"visuals": {
+			"wood": {"baby": "res://Assets/Images/piaff_baby1.png", "adult": "res://Assets/Images/piaff1.png"},
+			"bronze": {"baby": "res://Assets/Images/piaff_baby2.png", "adult": "res://Assets/Images/piaff2.png"},
+			"silver": {"baby": "res://Assets/Images/piaff_baby3.png", "adult": "res://Assets/Images/piaff3.png"},
+			"gold": {"baby": "res://Assets/Images/piaff_baby3.png", "adult": "res://Assets/Images/piaff3.png"},
+			"diamond": {"baby": "res://Assets/Images/piaff_baby3.png", "adult": "res://Assets/Images/piaff3.png"},
+		},
+		"income_per_second": 5,
+		"selling_value": 300
+	},
+	"snakecartpillar": {
+		"species_name": "Snakyr",
+		"visuals": {
+			"wood": {"baby": "res://Assets/Images/snakecartpillar_baby1.png", "adult": "res://Assets/Images/snakecartpillar1.png"},
+			"bronze": {"baby": "res://Assets/Images/snakecartpillar_baby2.png", "adult": "res://Assets/Images/snakecartpillar2.png"},
+			"silver": {"baby": "res://Assets/Images/snakecartpillar_baby3.png", "adult": "res://Assets/Images/snakecartpillar3.png"},
+			"gold": {"baby": "res://Assets/Images/snakecartpillar_baby3.png", "adult": "res://Assets/Images/snakecartpillar3.png"},
+			"diamond": {"baby": "res://Assets/Images/snakecartpillar_baby3.png", "adult": "res://Assets/Images/snakecartpillar3.png"},
+		},
+		"income_per_second": 5,
+		"selling_value": 300
 	}
 }
-
-func get_creature_id(creature_data):
-	return creature_data.type+"_"+creature_data.species_name;

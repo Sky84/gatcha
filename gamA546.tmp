@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c77qdaonfnpyt"]
+[gd_scene load_steps=18 format=3 uid="uid://c77qdaonfnpyt"]
 
 [ext_resource type="PackedScene" uid="uid://3s6djvo4dlm1" path="res://Buttons/creature_button.tscn" id="1_6phqq"]
 [ext_resource type="Script" path="res://Shop.gd" id="1_dwfql"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://7pchtvd2dc2x" path="res://Assets/HUD/buttonpetdex.png" id="6_poxll"]
 [ext_resource type="Texture2D" uid="uid://cvnnn5ivs42w5" path="res://Assets/HUD/buttonenclosure.png" id="7_y3xnl"]
 [ext_resource type="Texture2D" uid="uid://n7reanhniaxg" path="res://Assets/HUD/buttonclose.png" id="8_c7i3v"]
-[ext_resource type="Texture2D" uid="uid://y0yxdfu4fhy6" path="res://Assets/HUD/button.png" id="9_yctnw"]
 [ext_resource type="Script" path="res://PetDexPanel.gd" id="11_r223i"]
 [ext_resource type="Texture2D" uid="uid://7fmkrwiiur3d" path="res://Assets/HUD/topbarleft.png" id="12_gv3ss"]
 [ext_resource type="Texture2D" uid="uid://wdexlbmjn8ht" path="res://Assets/HUD/topbarright.png" id="13_myleh"]
@@ -226,28 +225,6 @@ custom_minimum_size = Vector2(1010, 442.21)
 layout_mode = 2
 columns = 999
 
-[node name="SellAllTextureButton" type="TextureButton" parent="CanvasLayer/Menu/TabContainer/Enclosure"]
-layout_mode = 0
-offset_left = 477.0
-offset_top = 41.0
-offset_right = 699.0
-offset_bottom = 94.0
-texture_normal = ExtResource("9_yctnw")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="CanvasLayer/Menu/TabContainer/Enclosure/SellAllTextureButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "SELL ALL"
-label_settings = SubResource("LabelSettings_n5b0l")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="TabButtons" type="Control" parent="CanvasLayer/Menu"]
 layout_mode = 1
 anchors_preset = 12
@@ -258,7 +235,6 @@ offset_top = -683.0
 offset_bottom = -549.0
 grow_horizontal = 2
 grow_vertical = 0
-mouse_filter = 2
 
 [node name="ShopButton" type="TextureButton" parent="CanvasLayer/Menu/TabButtons"]
 layout_mode = 0
@@ -416,7 +392,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="visibility_changed" from="CanvasLayer/Menu/TabContainer/Enclosure" to="CanvasLayer/Menu/TabContainer/Enclosure" method="_on_visibility_changed"]
-[connection signal="pressed" from="CanvasLayer/Menu/TabContainer/Enclosure/SellAllTextureButton" to="CanvasLayer/Menu/TabContainer/Enclosure" method="_on_sell_all_texture_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Menu/TabButtons/ShopButton" to="CanvasLayer/Menu" method="_on_shop_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Menu/TabButtons/PetDexButton" to="CanvasLayer/Menu" method="_on_pet_dex_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Menu/TabButtons/EnclosureButton" to="CanvasLayer/Menu" method="_on_enclosure_button_pressed"]

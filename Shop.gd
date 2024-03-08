@@ -16,6 +16,7 @@ enum TAB_INDEX {
 @onready var tab_container = $TabContainer
 @onready var petdex_panel = $PetDexPanel;
 @onready var creature_max_label = $"../HUD/CreatureMax/Label"
+@onready var coin_label = $"../HUD/Coin/Label"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,14 +26,21 @@ func _ready():
 	
 
 func _on_pressed_shop_item(shop_item: ShopItem):
-	if Player.current_creatures.size() <= Creatures.MAX_CREATURES:
+	if Player.money < shop_item._object_data.price:
+		var tween = create_tween();
+		tween.tween_property(coin_label, "scale", Vector2(1.5, 1.5), 0.5).set_trans(Tween.TRANS_BOUNCE);
+		tween.tween_property(coin_label, "scale", Vector2.ONE, 0.5).set_trans(Tween.TRANS_BOUNCE);
+		shop_item.play_anim_blocked();
+	elif Player.current_creatures.size() + loot_panel.opened_loot_item.size() < Creatures.MAX_CREATURES:
 		shop_item.play_anim_pressed();
+		Player.money -= shop_item._object_data.price;
 		loot_panel.open(shop_item);
 	else:
 		var tween = create_tween();
 		tween.tween_property(creature_max_label, "scale", Vector2(1.5, 1.5), 0.5).set_trans(Tween.TRANS_BACK);
 		tween.tween_property(creature_max_label, "scale", Vector2.ONE, 0.5).set_trans(Tween.TRANS_BACK);
 		shop_item.play_anim_blocked();
+	Player.update_HUD();
 
 func _on_shop_button_pressed():
 	_change_tab(TAB_INDEX.SHOP);
