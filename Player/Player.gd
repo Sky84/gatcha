@@ -53,7 +53,8 @@ func sell_creature(creature):
 
 func have_already_seen_creature(creature_data) -> bool:
 	for petdex_creature in Player.petdex:
-		if petdex_creature.id == creature_data.id:
+		if petdex_creature.species_name == creature_data.species_name\
+			and petdex_creature.type == creature_data.type:
 			return true;
 	return false;
 
