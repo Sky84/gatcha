@@ -39,11 +39,12 @@ func set_lock_creature(creature, lock: bool) -> void:
 func sell_creature(creature):
 	Player.current_creatures.erase(creature);
 	Player.money += creature.selling_value;
+	var tween = get_tree().create_tween();
 	for child_creature in creature_container.get_children():
 		if child_creature.id == creature.id:
-			var tween = get_tree().create_tween();
 			tween.tween_property(child_creature, "global_position", Vector2(200, 0), 0.7).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT);
 			await tween.finished;
+			print(creature.id)
 			creature_container.remove_child(child_creature);
 			child_creature.queue_free();
 			break;

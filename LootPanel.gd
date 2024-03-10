@@ -24,7 +24,7 @@ func _process_loot_rate(shop_item_data):
 		instance_loot.position = start_loot_position;
 		creature.type = loot_type;
 		creature.age = "baby";
-		creature.id = creature.type+"_"+creature.species_name+"_"+Time.get_time_string_from_system();
+		creature.id = generate_creature_id(get_child_count(), creature);
 		instance_loot.init_item(creature);
 		update_loot_node_position(instance_loot);
 		opened_loot_item.append(instance_loot);
@@ -33,7 +33,11 @@ func _process_loot_rate(shop_item_data):
 		for i in range(opened_loot_item.size() -1, -1, -1):
 			_on_instance_loot_pressed(opened_loot_item[i]);
 
+func generate_creature_id(instance_index, creature_data) -> String:
+	return str(instance_index)+str(Player.current_creatures.size())+"_"+creature_data.type+"_"+creature_data.species_name+"_"+str(Time.get_ticks_msec());
+
 func _on_instance_loot_pressed(instance_loot: LootItem):
+	instance_loot.pressed.disconnect(_on_instance_loot_pressed.bind(instance_loot));
 	opened_loot_item.erase(instance_loot);
 	var tween = get_tree().create_tween();
 	var target_pos = Vector2(700, -400);
