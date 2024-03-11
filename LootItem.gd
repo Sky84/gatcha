@@ -25,8 +25,9 @@ func _ready():
 
 func init_item(item_data):
 	current_item = item_data;
-	label_name.text = item_data.species_name;
-	texture_rect.texture = load(item_data.visuals[item_data.type].baby);
+	label_name.text = item_data[item_data.type].species_name;
+	label_time.text = Creatures.format_time(item_data[item_data.type].minutes_before_adult);
+	texture_rect.texture = load(item_data[item_data.type].visuals.baby);
 	set_rarity_type(item_data.type);
 
 func set_rarity_type(type: String):

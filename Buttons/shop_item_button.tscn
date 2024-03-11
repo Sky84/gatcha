@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://3s6djvo4dlm1"]
 
 [ext_resource type="Texture2D" uid="uid://cdqbw82odjn3a" path="res://Buttons/button.png" id="1_d7sjy"]
-[ext_resource type="Texture2D" uid="uid://82p2jm675vqb" path="res://Assets/Images/ploupy_baby.png" id="1_xqd6p"]
-[ext_resource type="Script" path="res://Buttons/creature_button.gd" id="2_hrnu2"]
+[ext_resource type="Texture2D" uid="uid://82p2jm675vqb" path="res://Assets/Images/ploupy_baby1.png" id="1_xqd6p"]
+[ext_resource type="Script" path="res://Buttons/shop_item_button.gd" id="2_hrnu2"]
 [ext_resource type="Texture2D" uid="uid://flvpedxn825" path="res://Buttons/moneycoin.png" id="3_qcwij"]
 [ext_resource type="FontFile" uid="uid://b5a46sti26c7u" path="res://8-bit-pusab.ttf" id="4_o2q1c"]
 

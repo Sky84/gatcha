@@ -2,6 +2,7 @@ extends Control
 class_name Menu
 
 @onready var loot_panel: LootPanel = $LootPanel;
+@onready var boost_panel = $BoostPanel
 
 #Array[ShopItem]
 var _shop_item_buttons: Array[Node];
@@ -23,7 +24,12 @@ func _ready():
 	_shop_item_buttons = get_tree().get_nodes_in_group('shop_item_button');
 	for button in _shop_item_buttons:
 		button.pressed.connect(_on_pressed_shop_item.bind(button));
-	
+	BoostEventBus.boost_creature_pressed.connect(_on_boost_open_panel);
+	BoostEventBus.BoostEventBus.on_boost_creature.connect(_on_boost_creature);
+
+func _on_boost_creature(creature_data, time_minutes_to_add):
+	#TODO Animate the boosted creature
+	creature_data.looted_time_seconds += time_minutes_to_add;
 
 func _on_pressed_shop_item(shop_item: ShopItem):
 	if Player.money < shop_item._object_data.price:
@@ -31,16 +37,40 @@ func _on_pressed_shop_item(shop_item: ShopItem):
 		tween.tween_property(coin_label, "scale", Vector2(1.5, 1.5), 0.5).set_trans(Tween.TRANS_BOUNCE);
 		tween.tween_property(coin_label, "scale", Vector2.ONE, 0.5).set_trans(Tween.TRANS_BOUNCE);
 		shop_item.play_anim_blocked();
-	elif Player.current_creatures.size() + loot_panel.opened_loot_item.size() < Creatures.MAX_CREATURES:
-		shop_item.play_anim_pressed();
-		Player.money -= shop_item._object_data.price;
-		loot_panel.open(shop_item);
-	else:
-		var tween = create_tween();
-		tween.tween_property(creature_max_label, "scale", Vector2(1.5, 1.5), 0.5).set_trans(Tween.TRANS_BACK);
-		tween.tween_property(creature_max_label, "scale", Vector2.ONE, 0.5).set_trans(Tween.TRANS_BACK);
-		shop_item.play_anim_blocked();
+		return;
+	match shop_item.item_type:
+		shop_item.ITEM_TYPE.LOOTBOX:
+			if Player.current_creatures.size() + loot_panel.opened_loot_item.size() >= Creatures.MAX_CREATURES:
+				var tween = create_tween();
+				tween.tween_property(creature_max_label, "scale", Vector2(1.5, 1.5), 0.5).set_trans(Tween.TRANS_BACK);
+				tween.tween_property(creature_max_label, "scale", Vector2.ONE, 0.5).set_trans(Tween.TRANS_BACK);
+				shop_item.play_anim_blocked();
+				return
+			loot_panel.open(shop_item);
+		shop_item.ITEM_TYPE.BOOST:
+			_on_boost_buy(shop_item);
+	shop_item.play_anim_pressed();
+	Player.money -= shop_item._object_data.price;
 	Player.update_HUD();
+
+func _on_boost_buy(boost_shop_item: ShopItem):
+	Player.add_boost(boost_shop_item.item_id, boost_shop_item._object_data);
+	var boost_shop_item_fake = boost_shop_item.duplicate();
+	add_child(boost_shop_item_fake);
+	boost_shop_item_fake.scale = Vector2.ZERO;
+	boost_shop_item_fake.global_position = boost_shop_item.global_position;
+	var tween = create_tween();
+	tween.set_parallel();
+	tween.tween_property(boost_shop_item_fake, "position:y", boost_shop_item_fake.global_position.y - 450, 0.5).set_trans(Tween.TRANS_BACK);
+	tween.tween_property(boost_shop_item_fake, "scale", Vector2(0.2,0.2), 0.5).set_trans(Tween.TRANS_BACK);
+	await tween.finished;
+	remove_child(boost_shop_item_fake);
+	boost_shop_item_fake.queue_free();
+
+func _on_boost_open_panel(creature_data):
+	var tween = create_tween();
+	tween.tween_property(boost_panel, "position:y", 0, 0.5).set_trans(Tween.TRANS_BACK);
+	boost_panel.init_panel(creature_data);
 
 func _on_shop_button_pressed():
 	_change_tab(TAB_INDEX.SHOP);

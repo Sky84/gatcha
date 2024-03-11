@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cl4aolq1yxv6i"]
+[gd_scene load_steps=9 format=3 uid="uid://cl4aolq1yxv6i"]
 
 [ext_resource type="Script" path="res://Creature/CreatureController.gd" id="1_tktly"]
 [ext_resource type="Texture2D" uid="uid://blkl21qs0cjrq" path="res://Assets/Images/bebeble_baby2.png" id="2_rxhl5"]
 [ext_resource type="Texture2D" uid="uid://8hy5hd5dr6na" path="res://Creature/shadow.png" id="2_yyd27"]
+[ext_resource type="FontFile" uid="uid://b5a46sti26c7u" path="res://8-bit-pusab.ttf" id="4_2j2sa"]
 
 [sub_resource type="Animation" id="Animation_71pmr"]
 resource_name = "jump"
@@ -67,6 +68,13 @@ _data = {
 "spawn": SubResource("Animation_gam2q")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_r3owl"]
+font = ExtResource("4_2j2sa")
+font_color = Color(0.0468913, 0.627964, 0.0384399, 1)
+outline_size = 10
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+
 [node name="Creature" type="TextureButton"]
 script = ExtResource("1_tktly")
 
@@ -114,3 +122,14 @@ pivot_offset = Vector2(183, 350)
 texture = ExtResource("2_rxhl5")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="GainMoneyLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = -32.0
+offset_top = -180.0
+offset_right = 27.0
+offset_bottom = -150.0
+text = "+ 33"
+label_settings = SubResource("LabelSettings_r3owl")

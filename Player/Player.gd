@@ -9,6 +9,7 @@ var current_creatures: Array = [];
 var locked_creatures: Array = [];
 var petdex: Array = [];
 var money = 0;
+var boosts = {};
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -38,7 +39,7 @@ func set_lock_creature(creature, lock: bool) -> void:
 
 func sell_creature(creature):
 	Player.current_creatures.erase(creature);
-	Player.money += creature.selling_value;
+	Player.money += creature[creature.type].selling_value;
 	var tween = get_tree().create_tween();
 	for child_creature in creature_container.get_children():
 		if child_creature.id == creature.id:
@@ -51,9 +52,25 @@ func sell_creature(creature):
 	update_HUD();
 	Save.save_data();
 
+func add_boost(boost_id: String, boost_data: Dictionary) -> void:
+	if boost_id in Player.boosts:
+		Player.boosts[boost_id].amount += 1;
+	else:
+		Player.boosts[boost_id] = {
+			"name": boost_data.name,
+			"amount": 1,
+			"item_id": boost_id,
+			"time_minutes_to_add": boost_data.time_minutes_to_add,
+			"visual": boost_data.visual
+		};
+
+func remove_boost(boost_data) -> Dictionary:
+	Player.boosts[boost_data.item_id].amount = max(0, Player.boosts[boost_data.item_id].amount - 1);
+	return Player.boosts[boost_data.item_id];
+
 func have_already_seen_creature(creature_data) -> bool:
 	for petdex_creature in Player.petdex:
-		if petdex_creature.species_name == creature_data.species_name\
+		if petdex_creature[petdex_creature.type].species_name == creature_data[creature_data.type].species_name\
 			and petdex_creature.type == creature_data.type:
 			return true;
 	return false;

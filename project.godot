@@ -23,6 +23,7 @@ Creatures="*res://Data/Creatures.gd"
 LootBoxes="*res://Data/LootBoxes.gd"
 Player="*res://Player/Player.gd"
 Save="*res://Data/Save.gd"
+BoostEventBus="*res://Boosts/BoostEventBus.gd"
 
 [display]
 
