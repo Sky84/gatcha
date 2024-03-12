@@ -9,6 +9,7 @@ class_name EnclosureCreatureButton
 @onready var animation_player = $AnimationPlayer;
 @onready var sell_button = $SellButton;
 @onready var lock_button = $LockButton;
+@onready var boost_button = $BoostButton;
 @onready var timer = $Timer;
 
 var locked = false;
@@ -33,6 +34,8 @@ func _on_update_timer():
 	if current_creature.age == "baby":
 		label_time.text = Creatures.format_time(get_remaining_minutes());
 	else:
+		var tween = create_tween();
+		tween.tween_property(boost_button, "scale", Vector2(0, 1), 0.7).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT);
 		label_time.text = str(current_creature[current_creature.type].income_per_second)+"c/s";
 
 func get_remaining_minutes() -> float:

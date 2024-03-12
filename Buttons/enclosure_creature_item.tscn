@@ -173,6 +173,7 @@ offset_top = 221.0
 offset_right = -40.0
 offset_bottom = 328.0
 grow_horizontal = 0
+pivot_offset = Vector2(53, 53)
 toggle_mode = true
 texture_normal = ExtResource("11_xmpm7")
 ignore_texture_size = true

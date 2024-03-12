@@ -25,11 +25,7 @@ func _ready():
 	for button in _shop_item_buttons:
 		button.pressed.connect(_on_pressed_shop_item.bind(button));
 	BoostEventBus.boost_creature_pressed.connect(_on_boost_open_panel);
-	BoostEventBus.BoostEventBus.on_boost_creature.connect(_on_boost_creature);
-
-func _on_boost_creature(creature_data, time_minutes_to_add):
-	#TODO Animate the boosted creature
-	creature_data.looted_time_seconds += time_minutes_to_add;
+	BoostEventBus.on_boost_creature.connect(Player.on_boost_creature);
 
 func _on_pressed_shop_item(shop_item: ShopItem):
 	if Player.money < shop_item._object_data.price:

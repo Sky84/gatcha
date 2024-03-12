@@ -25,6 +25,9 @@ func init_creature(creature_data: Dictionary):
 	timer.timeout.connect(_on_timeout.bind(creature_data));
 	_check_need_to_grow(creature_data);
 
+func play_boosted():
+	animation_player.play('boosted');
+
 func _on_timeout(creature_data):
 	if creature_data.age == "baby":
 		_check_need_to_grow(creature_data);

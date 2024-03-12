@@ -11,6 +11,8 @@ var petdex: Array = [];
 var money = 0;
 var boosts = {};
 
+signal on_boosted_creature;
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_load_save();
@@ -45,12 +47,22 @@ func sell_creature(creature):
 		if child_creature.id == creature.id:
 			tween.tween_property(child_creature, "global_position", Vector2(200, 0), 0.7).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN_OUT);
 			await tween.finished;
-			print(creature.id)
 			creature_container.remove_child(child_creature);
 			child_creature.queue_free();
 			break;
 	update_HUD();
 	Save.save_data();
+
+func on_boost_creature(creature_data, time_minutes_to_reduce):
+	for creature in Player.current_creatures:
+		if creature.id == creature_data.id:
+			creature.looted_time_seconds -= time_minutes_to_reduce * 60;
+	for creature in Player.creature_container.get_children():
+		if creature.id == creature_data.id:
+			creature.play_boosted();
+			break;
+	Save.save_data();
+	Player.on_boosted_creature.emit(creature_data.id, time_minutes_to_reduce);
 
 func add_boost(boost_id: String, boost_data: Dictionary) -> void:
 	if boost_id in Player.boosts:

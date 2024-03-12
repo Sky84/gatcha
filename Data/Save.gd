@@ -16,7 +16,8 @@ func get_save():
 			"current_creatures": json["current_creatures"],
 			"locked_creatures": json["locked_creatures"] if "locked_creatures" in json else [],
 			"petdex": json["petdex"],
-			"money": json["money"]
+			"money": json["money"],
+			"boosts": json["boosts"] if "boosts" in json else {}
 		}
 	return DEFAULT_SAVE;
 
@@ -25,6 +26,7 @@ func save_data():
 			"current_creatures": Player.current_creatures,
 			"locked_creatures": Player.locked_creatures,
 			"petdex": Player.petdex,
+			"boosts": Player.boosts,
 			"money": Player.money
 		};
 	var file = FileAccess.open(save_path, FileAccess.WRITE);

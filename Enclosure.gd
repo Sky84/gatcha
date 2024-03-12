@@ -3,6 +3,9 @@ extends Control
 const ENCLOSURE_CREATURE_ITEM = preload("res://Buttons/enclosure_creature_item.tscn");
 @onready var grid_container = $ScrollContainer2/GridContainer;
 
+func _ready():
+	Player.on_boosted_creature.connect(_on_boosted_creature);
+
 # When tab change, the visibility change too
 func _on_visibility_changed():
 	if visible:
@@ -16,6 +19,11 @@ func _on_visibility_changed():
 			child.sell_creature_pressed.disconnect(_on_sell_creature_pressed.bind(child));
 			grid_container.remove_child(child);
 			child.queue_free();
+
+func _on_boosted_creature(creature_id: String, time_minutes_to_reduce: int):
+	for instance in grid_container.get_children():
+		if instance.current_creature.id == creature_id:
+			instance.current_creature.looted_time_seconds -= time_minutes_to_reduce * 60;
 
 func _on_sell_creature_pressed(instance: EnclosureCreatureButton):
 	if instance.locked:
