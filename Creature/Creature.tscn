@@ -6,6 +6,34 @@
 [ext_resource type="FontFile" uid="uid://b5a46sti26c7u" path="res://8-bit-pusab.ttf" id="4_2j2sa"]
 [ext_resource type="Texture2D" uid="uid://dfrayv0s1svwi" path="res://Assets/HUD/boostbutton.png" id="5_m6280"]
 
+[sub_resource type="Animation" id="Animation_r5sbv"]
+resource_name = "boosted"
+length = 1.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CPUParticles2D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.61, 0.8, 1.01, 1.2, 1.41, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.0705882, 0.976471, 0.0588235, 1), Color(1, 1, 1, 1), Color(0.0705882, 0.976471, 0.0588235, 1), Color(1, 1, 1, 1), Color(0.0705882, 0.976471, 0.0588235, 1), Color(1, 1, 1, 1), Color(0.0705882, 0.976471, 0.0588235, 1), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_71pmr"]
 resource_name = "jump"
 length = 0.5
@@ -61,34 +89,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 9.84914, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(1.3, 1.3), Vector2(0.9, 0.9), Vector2(1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_r5sbv"]
-resource_name = "boosted"
-length = 1.8
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CPUParticles2D:emitting")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TextureRect:self_modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.61, 0.8, 1.01, 1.2, 1.41, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(0.0705882, 0.976471, 0.0588235, 1), Color(1, 1, 1, 1), Color(0.0705882, 0.976471, 0.0588235, 1), Color(1, 1, 1, 1), Color(0.0705882, 0.976471, 0.0588235, 1), Color(1, 1, 1, 1), Color(0.0705882, 0.976471, 0.0588235, 1), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kdw4r"]
