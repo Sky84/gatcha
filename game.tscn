@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c77qdaonfnpyt"]
+[gd_scene load_steps=21 format=3 uid="uid://c77qdaonfnpyt"]
 
 [ext_resource type="PackedScene" uid="uid://3s6djvo4dlm1" path="res://Buttons/shop_item_button.tscn" id="1_6phqq"]
 [ext_resource type="Script" path="res://Shop.gd" id="1_dwfql"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://PetDexPanel.gd" id="11_r223i"]
 [ext_resource type="Texture2D" uid="uid://7fmkrwiiur3d" path="res://Assets/HUD/topbarleft.png" id="12_gv3ss"]
 [ext_resource type="Texture2D" uid="uid://wdexlbmjn8ht" path="res://Assets/HUD/topbarright.png" id="13_myleh"]
+[ext_resource type="Texture2D" uid="uid://dn1oauh5jgs1a" path="res://Assets/HUD/uparrow2.png" id="13_ta6gt"]
 [ext_resource type="FontFile" uid="uid://b5a46sti26c7u" path="res://8-bit-pusab.ttf" id="14_otaqa"]
 [ext_resource type="Script" path="res://BoostPanel.gd" id="16_e20rs"]
 
@@ -267,6 +268,7 @@ offset_left = 69.0
 offset_top = -16.0
 offset_right = 161.0
 offset_bottom = 74.0
+pivot_offset = Vector2(46, 46)
 texture_normal = ExtResource("5_ilaal")
 ignore_texture_size = true
 stretch_mode = 5
@@ -277,6 +279,7 @@ offset_left = 179.0
 offset_top = 8.0
 offset_right = 271.0
 offset_bottom = 98.0
+pivot_offset = Vector2(46, 46)
 texture_normal = ExtResource("6_poxll")
 ignore_texture_size = true
 stretch_mode = 5
@@ -287,6 +290,7 @@ offset_left = 289.0
 offset_top = 8.0
 offset_right = 381.0
 offset_bottom = 98.0
+pivot_offset = Vector2(46, 46)
 texture_normal = ExtResource("7_y3xnl")
 ignore_texture_size = true
 stretch_mode = 5
@@ -301,7 +305,9 @@ offset_top = 8.0
 offset_right = -41.0
 offset_bottom = 98.0
 grow_horizontal = 0
-texture_normal = ExtResource("8_c7i3v")
+rotation = 3.14159
+pivot_offset = Vector2(46, 46)
+texture_normal = ExtResource("13_ta6gt")
 ignore_texture_size = true
 stretch_mode = 5
 

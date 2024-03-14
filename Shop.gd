@@ -18,6 +18,10 @@ enum TAB_INDEX {
 @onready var petdex_panel = $PetDexPanel;
 @onready var creature_max_label = $"../HUD/CreatureMax/Label"
 @onready var coin_label = $"../HUD/Coin/Label"
+@onready var close_button = $TabButtons/CloseButton
+@onready var shop_button = $TabButtons/ShopButton
+@onready var enclosure_button = $TabButtons/EnclosureButton
+@onready var pet_dex_button = $TabButtons/PetDexButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -82,14 +86,20 @@ func _on_enclosure_button_pressed():
 
 func _on_close_button_pressed():
 	var tween = create_tween();
-	tween.set_parallel();
 	var opened_menu_pos_y = 1276;
 	var hidden_menu_pos_y = 1276 * 2;
-	var tab_container_target_pos_y = opened_menu_pos_y if tab_container.position.y == hidden_menu_pos_y else hidden_menu_pos_y;
+	var is_tab_opened = tab_container.position.y == opened_menu_pos_y;
+	tween.set_parallel();
+	for button in [shop_button, enclosure_button, pet_dex_button]:
+		tween.tween_property(button, "scale", Vector2.ZERO if is_tab_opened else Vector2.ONE, 0.3).set_trans(Tween.TRANS_BACK);
+	var tab_container_target_pos_y = opened_menu_pos_y if not is_tab_opened else hidden_menu_pos_y;
 	tween.tween_property(tab_container, "position:y", tab_container_target_pos_y, 0.5).set_trans(Tween.TRANS_BACK);
 	var opened_buttons_menu_pos_y = 1238;
-	var hidden_buttons_menu_pos_y = 1238 * 1.5;
-	var tab_buttons_target_pos_y = opened_buttons_menu_pos_y if tab_buttons.position.y == hidden_buttons_menu_pos_y else hidden_buttons_menu_pos_y;
+	var hidden_buttons_menu_pos_y = 1800;
+	var opened_button_close_rotation = 180;
+	var hidden_button_close_rotation = 0;
+	tween.tween_property(close_button, "rotation_degrees", opened_button_close_rotation if not is_tab_opened else hidden_button_close_rotation, 0.5);
+	var tab_buttons_target_pos_y = opened_buttons_menu_pos_y if not is_tab_opened else hidden_buttons_menu_pos_y;
 	tween.tween_property(tab_buttons, "position:y", tab_buttons_target_pos_y, 0.6).set_trans(Tween.TRANS_BACK);
 
 func _change_tab(index: int):
