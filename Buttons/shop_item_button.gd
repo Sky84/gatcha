@@ -2,6 +2,9 @@
 extends TextureButton
 class_name ShopItem
 
+const MONEY_COIN = "res://Buttons/moneycoin.png";
+const DIAMOND_COIN = "res://Buttons/diamond.png";
+
 enum ITEM_TYPE {
 	BOOST,
 	LOOTBOX
@@ -36,18 +39,21 @@ func play_anim_blocked():
 	animation_player.stop();
 	animation_player.play("blocked");
 
-func _update_item(item_price: int, item_image_url: String, item_name: String):
+func _update_item(item_price: int, item_image_url: String, item_name: String, item_money_type_texture: String):
 	var texture_rect: TextureRect = get_node('TextureRect');
+	var texture_coin_type = get_node("Price/TextureRect");
 	var name_label: Label = get_node('Name');
 	var price_label: Label = get_node('Price');
 	texture_rect.texture = load(item_image_url);
 	name_label.text = item_name;
 	price_label.text = str(item_price);
+	texture_coin_type.texture = load(item_money_type_texture);
 
 func _on_export_var_changes():
 	var item_price: int = 0;
 	var item_image_url: String = "res://icon.svg";
 	var item_name: String = 'No Name';
+	var item_money_type_texture = "res://icon.svg";
 	if not _item_id.is_empty():
 		match _item_type:
 			ITEM_TYPE.BOOST:
@@ -56,6 +62,7 @@ func _on_export_var_changes():
 					item_name = boost.name;
 					item_price = boost.price;
 					item_image_url = boost.visual;
+					item_money_type_texture = DIAMOND_COIN if boost.money_type_id == "diamond" else MONEY_COIN;
 					_object_data = boost;
 			ITEM_TYPE.LOOTBOX:
 				if LootBoxes.LootBoxes.has(_item_id):
@@ -63,8 +70,9 @@ func _on_export_var_changes():
 					item_name = loot_box.name;
 					item_price = loot_box.price;
 					item_image_url = loot_box.visual;
+					item_money_type_texture = DIAMOND_COIN if loot_box.money_type_id == "diamond" else MONEY_COIN;
 					_object_data = loot_box;
-		_update_item(item_price, item_image_url, item_name);
+		_update_item(item_price, item_image_url, item_name, item_money_type_texture);
 
 func get_object_data():
 	return _object_data;

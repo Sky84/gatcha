@@ -53,7 +53,7 @@ func _earn_money(money_per_seconds: int) -> void:
 	tween.tween_property(gain_money_label, "self_modulate:a", 1, 1);
 	tween.tween_property(gain_money_label, "position:y", end_y, 0.5).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT);
 	tween.chain().tween_property(gain_money_label, "self_modulate:a", 0, 0.5);
-	Player.money += money_to_gain;
+	Player.coin += money_to_gain;
 	Player.update_HUD();
 
 func init_pathfinding(max_size:Vector2):

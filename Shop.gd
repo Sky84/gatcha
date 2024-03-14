@@ -17,7 +17,8 @@ enum TAB_INDEX {
 @onready var tab_container = $TabContainer
 @onready var petdex_panel = $PetDexPanel;
 @onready var creature_max_label = $"../HUD/CreatureMax/Label"
-@onready var coin_label = $"../HUD/Coin/Label"
+@onready var coin_label = $"../HUD/Coin/Label";
+@onready var diamond_label = $"../HUD/Diamond/Label";
 @onready var close_button = $TabButtons/CloseButton
 @onready var shop_button = $TabButtons/ShopButton
 @onready var enclosure_button = $TabButtons/EnclosureButton
@@ -32,10 +33,11 @@ func _ready():
 	BoostEventBus.on_boost_creature.connect(Player.on_boost_creature);
 
 func _on_pressed_shop_item(shop_item: ShopItem):
-	if Player.money < shop_item._object_data.price:
+	var money_label = diamond_label if shop_item._object_data.money_type_id == "diamond" else coin_label;
+	if Player[shop_item._object_data.money_type_id] < shop_item._object_data.price:
 		var tween = create_tween();
-		tween.tween_property(coin_label, "scale", Vector2(1.5, 1.5), 0.5).set_trans(Tween.TRANS_BOUNCE);
-		tween.tween_property(coin_label, "scale", Vector2.ONE, 0.5).set_trans(Tween.TRANS_BOUNCE);
+		tween.tween_property(money_label, "scale", Vector2(1.5, 1.5), 0.5).set_trans(Tween.TRANS_BOUNCE);
+		tween.tween_property(money_label, "scale", Vector2.ONE, 0.5).set_trans(Tween.TRANS_BOUNCE);
 		shop_item.play_anim_blocked();
 		return;
 	match shop_item.item_type:
@@ -50,7 +52,7 @@ func _on_pressed_shop_item(shop_item: ShopItem):
 		shop_item.ITEM_TYPE.BOOST:
 			_on_boost_buy(shop_item);
 	shop_item.play_anim_pressed();
-	Player.money -= shop_item._object_data.price;
+	Player[shop_item._object_data.money_type_id] -= shop_item._object_data.price;
 	Player.update_HUD();
 
 func _on_boost_buy(boost_shop_item: ShopItem):

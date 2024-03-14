@@ -4,11 +4,13 @@ const CREATURE = preload("res://Creature/Creature.tscn");
 @onready var creature_container: Control = get_node('/root/Game/CanvasLayer/Background/CreatureContainer');
 @onready var creature_max_label: Label = get_node('/root/Game/CanvasLayer/HUD/CreatureMax/Label');
 @onready var coin_label: Label = get_node('/root/Game/CanvasLayer/HUD/Coin/Label');
+@onready var diamond_label = get_node('/root/Game/CanvasLayer/HUD/Diamond/Label');
 
 var current_creatures: Array = [];
 var locked_creatures: Array = [];
 var petdex: Array = [];
-var money = 0;
+var coin = 0;
+var diamond = 0;
 var boosts = {};
 
 signal on_boosted_creature;
@@ -16,6 +18,7 @@ signal on_boosted_creature;
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_load_save();
+	update_HUD();
 
 func add_creature(creature_data: Dictionary, from_save: bool = false):
 	if not from_save:
@@ -41,7 +44,7 @@ func set_lock_creature(creature, lock: bool) -> void:
 
 func sell_creature(creature):
 	Player.current_creatures.erase(creature);
-	Player.money += creature[creature.type].selling_value;
+	Player.coin += creature[creature.type].selling_value;
 	var tween = get_tree().create_tween();
 	for child_creature in creature_container.get_children():
 		if child_creature.id == creature.id:
@@ -100,4 +103,5 @@ func _load_save():
 
 func update_HUD():
 	creature_max_label.text = str(Player.current_creatures.size())+"/"+str(Creatures.MAX_CREATURES);
-	coin_label.text = str(Player.money);
+	coin_label.text = str(Player.coin);
+	diamond_label.text = str(Player.diamond);

@@ -1,10 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://c77qdaonfnpyt"]
+[gd_scene load_steps=22 format=3 uid="uid://c77qdaonfnpyt"]
 
 [ext_resource type="PackedScene" uid="uid://3s6djvo4dlm1" path="res://Buttons/shop_item_button.tscn" id="1_6phqq"]
 [ext_resource type="Script" path="res://Shop.gd" id="1_dwfql"]
 [ext_resource type="Script" path="res://LootPanel.gd" id="3_3eft4"]
 [ext_resource type="Texture2D" uid="uid://bquqji0c53xby" path="res://Assets/HUD/smallmenu.png" id="3_gur2h"]
 [ext_resource type="Texture2D" uid="uid://cpo10w4anfwcf" path="res://Assets/Images/backgroundfarm.png" id="4_4vsax"]
+[ext_resource type="Texture2D" uid="uid://dmf8sjjnhg3a2" path="res://Assets/HUD/topbarleftdiamond.png" id="4_d6ui6"]
 [ext_resource type="Texture2D" uid="uid://cuf6t1pqngems" path="res://Assets/HUD/buttonshop.png" id="5_ilaal"]
 [ext_resource type="Script" path="res://Enclosure.gd" id="5_lot1b"]
 [ext_resource type="Texture2D" uid="uid://7pchtvd2dc2x" path="res://Assets/HUD/buttonpetdex.png" id="6_poxll"]
@@ -84,6 +85,32 @@ text = "257442"
 label_settings = SubResource("LabelSettings_n5b0l")
 vertical_alignment = 1
 
+[node name="Diamond" type="TextureRect" parent="CanvasLayer/HUD"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -163.5
+offset_right = 163.5
+offset_bottom = 96.0
+grow_horizontal = 2
+texture = ExtResource("4_d6ui6")
+
+[node name="Label" type="Label" parent="CanvasLayer/HUD/Diamond"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 103.0
+offset_top = 20.0
+offset_right = -22.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "257442"
+label_settings = SubResource("LabelSettings_n5b0l")
+vertical_alignment = 1
+
 [node name="CreatureMax" type="TextureRect" parent="CanvasLayer/HUD"]
 layout_mode = 1
 anchors_preset = 1
@@ -146,6 +173,7 @@ offset_left = 55.0
 offset_top = 107.0
 offset_right = 1065.0
 offset_bottom = 581.0
+scroll_horizontal = 945
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/Menu/TabContainer/Shop/ScrollContainer"]
 custom_minimum_size = Vector2(1014, 442.21)
