@@ -25,6 +25,7 @@ Player="*res://Player/Player.gd"
 Save="*res://Data/Save.gd"
 BoostEventBus="*res://Boosts/BoostEventBus.gd"
 PayService="*res://PayService.gd"
+Diamonds="*res://Data/Diamonds.gd"
 
 [display]
 

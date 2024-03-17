@@ -33,6 +33,9 @@ func _ready():
 	BoostEventBus.on_boost_creature.connect(Player.on_boost_creature);
 
 func _on_pressed_shop_item(shop_item: ShopItem):
+	if shop_item._object_data.money_type_id == "euros":
+		_handle_euros_payment(shop_item);
+		return;
 	var money_label = diamond_label if shop_item._object_data.money_type_id == "diamond" else coin_label;
 	if Player[shop_item._object_data.money_type_id] < shop_item._object_data.price:
 		var tween = create_tween();
@@ -54,6 +57,9 @@ func _on_pressed_shop_item(shop_item: ShopItem):
 	shop_item.play_anim_pressed();
 	Player[shop_item._object_data.money_type_id] -= shop_item._object_data.price;
 	Player.update_HUD();
+
+func _handle_euros_payment(shop_item: ShopItem):
+	PayService.purchase(shop_item.item_id);
 
 func _on_boost_buy(boost_shop_item: ShopItem):
 	Player.add_boost(boost_shop_item.item_id, boost_shop_item._object_data);

@@ -26,12 +26,12 @@ func _ready():
 		payment.disconnected.connect(_on_disconnected) # No params
 		payment.billing_resume.connect(_on_billing_resume) # No params
 		payment.connect_error.connect(_on_connect_error) # Response ID (int), Debug message (string)
-		payment.purchases_updated.connect(_on_purchases_updated) # Purchases (Dictionary[])
 		payment.query_purchases_response.connect(_on_query_purchases_response) # Purchases (Dictionary[])
 		payment.purchase_error.connect(_on_purchase_error) # Response ID (int), Debug message (string)
 		payment.sku_details_query_completed.connect(_on_product_details_query_completed) # Products (Dictionary[])
 		payment.sku_details_query_error.connect(_on_product_details_query_error) # Response ID (int), Debug message (string), Queried SKUs (string[])
 		payment.price_change_acknowledged.connect(_on_price_acknowledged) # Response ID (int)
+		payment.purchases_updated.connect(_on_purchases_updated) # Purchases (Dictionary[])
 		payment.purchase_acknowledged.connect(_on_purchase_acknowledged) # Purchase token (string)
 		payment.purchase_acknowledgement_error.connect(_on_purchase_acknowledgement_error) # Response ID (int), Debug message (string), Purchase token (string)
 		payment.purchase_consumed.connect(_on_purchase_consumed) # Purchase token (string)
@@ -40,6 +40,22 @@ func _ready():
 		payment.startConnection()
 	else:
 		print("Android IAP support is not enabled. Make sure you have enabled 'Gradle Build' and the GodotGooglePlayBilling plugin in your Android export settings! IAP will not work.")
+
+#The payment flow will send a purchases_updated signal on success or a purchase_error signal on failure
+func purchase(shop_item_id: String):
+	print("Trying to buy"+ shop_item_id)
+	payment.purchase(shop_item_id);
+
+func _on_billing_resume():
+	if payment.getConnectionState() == ConnectionState.CONNECTED:
+		_query_purchases()
+
+func _on_purchases_updated(purchases):
+	for purchase in purchases:
+		_process_purchase(purchase)
+
+func _on_purchase_error(response_id, error_message):
+	print("purchase_error id:", response_id, " message: ", error_message);
 
 func _on_disconnected():
 	print("_on_disconnected");
@@ -64,9 +80,10 @@ func _on_purchase_consumption_error():
 
 func _process_purchase(purchase):
 	print("_process_purchase");
+	print(purchase);
 
 func _on_connected():
-	payment.querySkuDetails(["my_iap_item"], "inapp") # "subs" for subscriptions
+	payment.querySkuDetails(Diamonds.Diamonds.keys(), "inapp") # "subs" for subscriptions
 
 func _on_product_details_query_completed(product_details):
 	for available_product in product_details:
@@ -88,13 +105,3 @@ func _on_query_purchases_response(query_result):
 				query_result.response_code,
 				" debug message: ", query_result.debug_message)
 
-func _on_billing_resume():
-	if payment.getConnectionState() == ConnectionState.CONNECTED:
-		_query_purchases()
-
-func _on_purchases_updated(purchases):
-	for purchase in purchases:
-		_process_purchase(purchase)
-
-func _on_purchase_error(response_id, error_message):
-	print("purchase_error id:", response_id, " message: ", error_message)

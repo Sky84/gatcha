@@ -173,7 +173,6 @@ offset_left = 55.0
 offset_top = 107.0
 offset_right = 1065.0
 offset_bottom = 581.0
-scroll_horizontal = 945
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/Menu/TabContainer/Shop/ScrollContainer"]
 custom_minimum_size = Vector2(1014, 442.21)
@@ -216,6 +215,26 @@ item_id = "4m"
 [node name="ShopItem8" parent="CanvasLayer/Menu/TabContainer/Shop/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
 layout_mode = 2
 item_id = "6m"
+
+[node name="ShopItem9" parent="CanvasLayer/Menu/TabContainer/Shop/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
+layout_mode = 2
+item_id = "x5"
+item_type = 2
+
+[node name="ShopItem10" parent="CanvasLayer/Menu/TabContainer/Shop/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
+layout_mode = 2
+item_id = "x15"
+item_type = 2
+
+[node name="ShopItem11" parent="CanvasLayer/Menu/TabContainer/Shop/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
+layout_mode = 2
+item_id = "x50"
+item_type = 2
+
+[node name="ShopItem12" parent="CanvasLayer/Menu/TabContainer/Shop/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
+layout_mode = 2
+item_id = "x100"
+item_type = 2
 
 [node name="PetDex" type="Control" parent="CanvasLayer/Menu/TabContainer"]
 visible = false
