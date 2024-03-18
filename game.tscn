@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c77qdaonfnpyt"]
+[gd_scene load_steps=24 format=3 uid="uid://c77qdaonfnpyt"]
 
 [ext_resource type="PackedScene" uid="uid://3s6djvo4dlm1" path="res://Buttons/shop_item_button.tscn" id="1_6phqq"]
 [ext_resource type="Script" path="res://Shop.gd" id="1_dwfql"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cvnnn5ivs42w5" path="res://Assets/HUD/buttonenclosure.png" id="7_y3xnl"]
 [ext_resource type="Texture2D" uid="uid://n7reanhniaxg" path="res://Assets/HUD/buttonclose.png" id="8_c7i3v"]
 [ext_resource type="Texture2D" uid="uid://y0yxdfu4fhy6" path="res://Assets/HUD/button.png" id="9_yctnw"]
+[ext_resource type="Texture2D" uid="uid://cox7wjp8ladyn" path="res://Buttons/diamond.png" id="10_duhkn"]
 [ext_resource type="Script" path="res://PetDexPanel.gd" id="11_r223i"]
 [ext_resource type="Texture2D" uid="uid://7fmkrwiiur3d" path="res://Assets/HUD/topbarleft.png" id="12_gv3ss"]
 [ext_resource type="Texture2D" uid="uid://wdexlbmjn8ht" path="res://Assets/HUD/topbarright.png" id="13_myleh"]
@@ -25,6 +26,10 @@ font_size = 20
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lecxe"]
 texture = ExtResource("3_gur2h")
+
+[sub_resource type="LabelSettings" id="LabelSettings_oykjc"]
+font = ExtResource("14_otaqa")
+font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_2f17a"]
 font = ExtResource("14_otaqa")
@@ -197,6 +202,7 @@ offset_left = 55.0
 offset_top = 107.0
 offset_right = 1065.0
 offset_bottom = 581.0
+scroll_horizontal = 3210
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/Menu/TabContainer/Shop/ScrollContainer"]
 custom_minimum_size = Vector2(1014, 442.21)
@@ -245,20 +251,148 @@ layout_mode = 2
 item_id = "x5"
 item_type = 2
 
+[node name="Label" type="Label" parent="CanvasLayer/Menu/TabContainer/Shop/ScrollContainer/GridContainer/ShopItem9"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 72.0
+offset_top = -204.0
+offset_right = -11.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "x5"
+label_settings = SubResource("LabelSettings_oykjc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Menu/TabContainer/Shop/ScrollContainer/GridContainer/ShopItem9/Label"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.5
+offset_top = -30.0
+offset_right = -43.5
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_duhkn")
+
 [node name="ShopItem10" parent="CanvasLayer/Menu/TabContainer/Shop/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
 layout_mode = 2
 item_id = "x15"
 item_type = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Menu/TabContainer/Shop/ScrollContainer/GridContainer/ShopItem10"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 55.0
+offset_top = -204.0
+offset_right = -11.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "x15"
+label_settings = SubResource("LabelSettings_oykjc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Menu/TabContainer/Shop/ScrollContainer/GridContainer/ShopItem10/Label"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.5
+offset_top = -30.0
+offset_right = -48.5
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_duhkn")
 
 [node name="ShopItem11" parent="CanvasLayer/Menu/TabContainer/Shop/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
 layout_mode = 2
 item_id = "x50"
 item_type = 2
 
+[node name="Label" type="Label" parent="CanvasLayer/Menu/TabContainer/Shop/ScrollContainer/GridContainer/ShopItem11"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 55.0
+offset_top = -204.0
+offset_right = -11.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "x50"
+label_settings = SubResource("LabelSettings_oykjc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Menu/TabContainer/Shop/ScrollContainer/GridContainer/ShopItem11/Label"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.5
+offset_top = -30.0
+offset_right = -54.5
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_duhkn")
+
 [node name="ShopItem12" parent="CanvasLayer/Menu/TabContainer/Shop/ScrollContainer/GridContainer" instance=ExtResource("1_6phqq")]
 layout_mode = 2
 item_id = "x100"
 item_type = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Menu/TabContainer/Shop/ScrollContainer/GridContainer/ShopItem12"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 55.0
+offset_top = -204.0
+offset_right = -11.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "x100"
+label_settings = SubResource("LabelSettings_oykjc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Menu/TabContainer/Shop/ScrollContainer/GridContainer/ShopItem12/Label"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.5
+offset_top = -30.0
+offset_right = -65.5
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_duhkn")
 
 [node name="PetDex" type="Control" parent="CanvasLayer/Menu/TabContainer"]
 visible = false
