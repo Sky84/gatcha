@@ -1,11 +1,43 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8y2i2ladam5p"]
+[gd_scene load_steps=44 format=3 uid="uid://c8y2i2ladam5p"]
 
 [ext_resource type="Texture2D" uid="uid://cdqbw82odjn3a" path="res://Buttons/button.png" id="1_ja8p0"]
 [ext_resource type="Script" path="res://LootItem.gd" id="2_nxl3h"]
 [ext_resource type="Texture2D" uid="uid://drvay7e0u6lee" path="res://Assets/Images/lezar_baby1.png" id="3_d3uah"]
+[ext_resource type="Texture2D" uid="uid://f48mwblymhix" path="res://LootBoxes/Animations/Shine/epic_anim9.png" id="3_k5wyu"]
 [ext_resource type="Texture2D" uid="uid://buku36rjx26uk" path="res://Buttons/coloruncomon.png" id="4_hb12w"]
 [ext_resource type="FontFile" uid="uid://b5a46sti26c7u" path="res://8-bit-pusab.ttf" id="4_wly33"]
 [ext_resource type="Texture2D" uid="uid://mt1xw5bmbb44" path="res://Buttons/stargold.png" id="5_a3i8y"]
+[ext_resource type="Texture2D" uid="uid://cy305trqwbsps" path="res://LootBoxes/Animations/Shine/epic_anim1.png" id="8_p58on"]
+[ext_resource type="Texture2D" uid="uid://cl33t3l2t1rbn" path="res://LootBoxes/Animations/Shine/epic_anim2.png" id="9_x5ct7"]
+[ext_resource type="Texture2D" uid="uid://c4osqxf6ufu8s" path="res://LootBoxes/Animations/Shine/epic_anim3.png" id="10_phlti"]
+[ext_resource type="Texture2D" uid="uid://clig7slxvfno3" path="res://LootBoxes/Animations/Shine/epic_anim4.png" id="11_ih1ew"]
+[ext_resource type="Texture2D" uid="uid://c8ap1rc5ktyaq" path="res://LootBoxes/Animations/Shine/epic_anim5.png" id="12_spkmg"]
+[ext_resource type="Texture2D" uid="uid://path82qya5pw" path="res://LootBoxes/Animations/Shine/epic_anim6.png" id="13_plwne"]
+[ext_resource type="Texture2D" uid="uid://4nqnifuwgpge" path="res://LootBoxes/Animations/Shine/epic_anim7.png" id="14_fdhy1"]
+[ext_resource type="Texture2D" uid="uid://fmvgulpo8k4e" path="res://LootBoxes/Animations/Shine/epic_anim8.png" id="15_jyj60"]
+[ext_resource type="Texture2D" uid="uid://bkkdhluatdkdo" path="res://LootBoxes/Animations/Shine/epic_anim10.png" id="16_36nuy"]
+[ext_resource type="Texture2D" uid="uid://bwob7y2i4nfgy" path="res://LootBoxes/Animations/Shine/epic_anim11.png" id="17_11sje"]
+[ext_resource type="Texture2D" uid="uid://5guwqfl3dy32" path="res://LootBoxes/Animations/Shine/epic_anim12.png" id="18_6b6au"]
+[ext_resource type="Texture2D" uid="uid://bukbwmteek06e" path="res://LootBoxes/Animations/Shine/epic_anim13.png" id="19_j0swq"]
+[ext_resource type="Texture2D" uid="uid://bwyqr2jkjfyty" path="res://LootBoxes/Animations/ShineBackground/epic_background_anim1.png" id="20_cirik"]
+[ext_resource type="Texture2D" uid="uid://bjstrylma7mo7" path="res://LootBoxes/Animations/ShineBackground/epic_background_anim2.png" id="21_1lnia"]
+[ext_resource type="Texture2D" uid="uid://c4bxw64d3hk7x" path="res://LootBoxes/Animations/ShineBackground/epic_background_anim3.png" id="22_6c8tp"]
+[ext_resource type="Texture2D" uid="uid://b3dm04dm7c55q" path="res://LootBoxes/Animations/ShineBackground/epic_background_anim4.png" id="23_7m425"]
+[ext_resource type="Texture2D" uid="uid://bsu7asye1c8bl" path="res://LootBoxes/Animations/ShineBackground/epic_background_anim5.png" id="24_haufw"]
+[ext_resource type="Texture2D" uid="uid://2gtj5q1w8id2" path="res://LootBoxes/Animations/ShineBackground/epic_background_anim6.png" id="25_286sc"]
+[ext_resource type="Texture2D" uid="uid://c8hiyqe26x7qu" path="res://LootBoxes/Animations/ShineBackground/epic_background_anim7.png" id="26_lms4h"]
+[ext_resource type="Texture2D" uid="uid://0b32ysqcapwj" path="res://LootBoxes/Animations/ShineBackground/epic_background_anim8.png" id="27_b7370"]
+[ext_resource type="Texture2D" uid="uid://b0vmqblxmyqpj" path="res://LootBoxes/Animations/ShineBackground/epic_background_anim9.png" id="28_nd7vx"]
+[ext_resource type="Texture2D" uid="uid://doa1vthu1ai0t" path="res://LootBoxes/Animations/ShineBackground/epic_background_anim10.png" id="29_g3a66"]
+[ext_resource type="Texture2D" uid="uid://y74jhde6we7x" path="res://LootBoxes/Animations/ShineBackground/epic_background_anim11.png" id="30_uaunr"]
+[ext_resource type="Texture2D" uid="uid://nvpmvp8gmu7c" path="res://LootBoxes/Animations/ShineBackground/epic_background_anim12.png" id="31_13dsa"]
+[ext_resource type="Texture2D" uid="uid://ca0br706br65l" path="res://LootBoxes/Animations/ShineBackground/epic_background_anim13.png" id="32_rmi26"]
+[ext_resource type="Texture2D" uid="uid://wdklowgibwxc" path="res://LootBoxes/Animations/ShineBackground/epic_background_anim14.png" id="33_pahys"]
+[ext_resource type="Texture2D" uid="uid://dw38d40lu1hmw" path="res://LootBoxes/Animations/ShineBackground/epic_background_anim15.png" id="34_7bquf"]
+[ext_resource type="Texture2D" uid="uid://lip3i8din1il" path="res://LootBoxes/Animations/ShineBackground/epic_background_anim16.png" id="35_m2anw"]
+[ext_resource type="Texture2D" uid="uid://cbkn00damfy2k" path="res://LootBoxes/Animations/ShineBackground/epic_background_anim17.png" id="36_1sbfb"]
+[ext_resource type="Texture2D" uid="uid://cv46e8rrfovcp" path="res://LootBoxes/Animations/ShineBackground/epic_background_anim18.png" id="37_cip15"]
+[ext_resource type="Texture2D" uid="uid://c1vpluvlalqev" path="res://LootBoxes/Animations/ShineBackground/epic_background_anim19.png" id="38_rr2wv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dnlkv"]
 font = ExtResource("4_wly33")
@@ -52,12 +84,147 @@ tracks/2/keys = {
 "values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_cd2ie"]
+resource_name = "diamond_loot"
+length = 2.0
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.21293, 0.0, 0.21293, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LabelName:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.10472, 0.0, -0.10472, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TypeTexture:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 1, 1.2, 2),
+"transitions": PackedFloat32Array(1, 1.03526, 1, 1.03526, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EpicShine:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("8_p58on"), ExtResource("9_x5ct7"), ExtResource("10_phlti"), ExtResource("11_ih1ew"), ExtResource("12_spkmg"), ExtResource("13_plwne"), ExtResource("14_fdhy1"), ExtResource("15_jyj60"), ExtResource("3_k5wyu"), ExtResource("16_36nuy"), ExtResource("17_11sje"), ExtResource("18_6b6au"), null]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("EpicShineBackground:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.05, 0.15, 0.25, 0.35, 0.5, 0.65, 0.75, 0.85, 0.95, 1.05, 1.15, 1.25, 1.35, 1.45, 1.55, 1.65, 1.75, 1.85, 1.95),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("20_cirik"), ExtResource("21_1lnia"), ExtResource("22_6c8tp"), ExtResource("23_7m425"), ExtResource("24_haufw"), ExtResource("25_286sc"), ExtResource("26_lms4h"), ExtResource("27_b7370"), ExtResource("28_nd7vx"), ExtResource("29_g3a66"), ExtResource("30_uaunr"), ExtResource("31_13dsa"), ExtResource("32_rmi26"), ExtResource("33_pahys"), ExtResource("34_7bquf"), ExtResource("35_m2anw"), ExtResource("36_1sbfb"), ExtResource("37_cip15"), ExtResource("38_rr2wv")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("EpicShineBackground:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.05),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_5lvwa"]
+resource_name = "gold_loot"
+length = 2.0
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.21293, 0.0, 0.21293, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LabelName:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.10472, 0.0, -0.10472, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TypeTexture:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 1, 1.2, 2),
+"transitions": PackedFloat32Array(1, 1.03526, 1, 1.03526, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EpicShine:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("8_p58on"), ExtResource("9_x5ct7"), ExtResource("10_phlti"), ExtResource("11_ih1ew"), ExtResource("12_spkmg"), ExtResource("13_plwne"), ExtResource("14_fdhy1"), ExtResource("15_jyj60"), ExtResource("3_k5wyu"), ExtResource("16_36nuy"), ExtResource("17_11sje"), ExtResource("18_6b6au"), ExtResource("19_j0swq")]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sc3qb"]
 _data = {
-"default_shake": SubResource("Animation_8h0fq")
+"default_shake": SubResource("Animation_8h0fq"),
+"diamond_loot": SubResource("Animation_cd2ie"),
+"gold_loot": SubResource("Animation_5lvwa")
 }
 
 [node name="LootItem" type="TextureButton"]
+z_index = 1
 texture_filter = 1
 custom_minimum_size = Vector2(332, 325)
 offset_right = 303.0
@@ -67,6 +234,24 @@ texture_normal = ExtResource("1_ja8p0")
 ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("2_nxl3h")
+
+[node name="EpicShineBackground" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -320.0
+offset_right = 180.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(180, 320)
+texture = ExtResource("34_7bquf")
+stretch_mode = 5
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -81,7 +266,7 @@ offset_right = 83.0
 offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
-rotation = -0.21293
+rotation = 0.161193
 pivot_offset = Vector2(83, 141.8)
 texture = ExtResource("3_d3uah")
 expand_mode = 1
@@ -97,7 +282,7 @@ offset_top = 7.0
 offset_right = 85.0
 offset_bottom = 42.0
 grow_horizontal = 2
-rotation = 0.10472
+rotation = -0.0792756
 pivot_offset = Vector2(79, 17)
 text = "TODO NAME"
 label_settings = SubResource("LabelSettings_dnlkv")
@@ -132,6 +317,15 @@ texture = ExtResource("4_hb12w")
 expand_mode = 1
 stretch_mode = 5
 
+[node name="EpicShine" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
 [node name="TypeTexture" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 1
@@ -142,7 +336,7 @@ offset_top = 10.0
 offset_right = -27.0
 offset_bottom = 52.0
 grow_horizontal = 0
-scale = Vector2(1.06377, 1.06377)
+scale = Vector2(1.04849, 1.04849)
 pivot_offset = Vector2(21, 21)
 texture = ExtResource("5_a3i8y")
 expand_mode = 1

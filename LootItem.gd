@@ -17,10 +17,12 @@ var item_rarity: ITEM_RARITY;
 @onready var label_time = $LabelTime;
 @onready var texture_rect_rarity_type = $TextureRect2;
 @onready var texture_rect_type = $TypeTexture;
+@onready var epic_shine_background = $EpicShineBackground
 
 var current_item: Dictionary;
 
 func _ready():
+	epic_shine_background.visible = false;
 	animation_player.play("default_shake");
 
 func init_item(item_data):
@@ -29,6 +31,11 @@ func init_item(item_data):
 	label_time.text = Creatures.format_time(item_data[item_data.type].minutes_before_adult);
 	texture_rect.texture = load(item_data[item_data.type].visuals.baby);
 	set_rarity_type(item_data.type);
+
+func play_epic_animations():
+	print(current_item.type)
+	animation_player.stop();
+	animation_player.play(current_item.type+"_loot");
 
 func set_rarity_type(type: String):
 	if type == 'wood':

@@ -15,6 +15,8 @@ enum PurchaseState {
 	PENDING,
 }
 
+signal on_purchased_success;
+
 var payment: JNISingleton;
 
 func _ready():
@@ -44,7 +46,11 @@ func _ready():
 #The payment flow will send a purchases_updated signal on success or a purchase_error signal on failure
 func purchase(shop_item_id: String):
 	print("Trying to buy"+ shop_item_id)
-	payment.purchase(shop_item_id);
+	if payment:
+		payment.purchase(shop_item_id);
+	else:
+		print("Mocked buying"+ shop_item_id);
+		on_purchased_success.emit({"amount":1, "id": shop_item_id});
 
 func _on_billing_resume():
 	if payment.getConnectionState() == ConnectionState.CONNECTED:
@@ -79,8 +85,8 @@ func _on_purchase_consumption_error():
 	print("_on_purchase_consumption_error");
 
 func _process_purchase(purchase):
-	print("_process_purchase");
-	print(purchase);
+	if purchase.purchase_state == PurchaseState.PURCHASED:
+		on_purchased_success.emit({"amount":purchase.amount, "id": purchase.productId});
 
 func _on_connected():
 	payment.querySkuDetails(Diamonds.Diamonds.keys(), "inapp") # "subs" for subscriptions

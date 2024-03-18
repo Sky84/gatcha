@@ -1,7 +1,7 @@
 extends Node
 const LootBoxes = {
 	"wood": {
-		"name": "Bois",
+		"name": "Wood",
 		"visual": "res://LootBoxes/WoodLootbox.png",
 		"price": 10,
 		"money_type_id": "coin",
@@ -23,7 +23,7 @@ const LootBoxes = {
 		"diamond_loot_rate": 0.50
 	},
 	"silver": {
-		"name": "Argent",
+		"name": "Silver",
 		"visual": "res://LootBoxes/SilverLootbox.png",
 		"price": 100,
 		"money_type_id": "coin",
@@ -34,7 +34,7 @@ const LootBoxes = {
 		"diamond_loot_rate": 0.70
 	},
 	"gold": {
-		"name": "Or",
+		"name": "Gold",
 		"visual": "res://LootBoxes/GoldLootbox.png",
 		"price": 2,
 		"money_type_id": "diamond",
@@ -45,7 +45,7 @@ const LootBoxes = {
 		"diamond_loot_rate": 1
 	},
 	"diamond": {
-		"name": "Diamant",
+		"name": "Diamond",
 		"visual": "res://LootBoxes/DiamondLootbox.png",
 		"price": 5,
 		"money_type_id": "diamond",

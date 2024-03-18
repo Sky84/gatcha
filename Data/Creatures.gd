@@ -372,6 +372,266 @@ var Creatures = {
 			}
 		}
 	},
+	"dog": {
+		"wood":{
+			"species_name": "Doggo",
+			"income_per_second": 5,
+			"minutes_before_adult": 30,
+			"selling_value": 1000,
+			"visuals":{
+				"baby": "res://Assets/Images/dog_baby1.png",
+				"adult": "res://Assets/Images/dog1.png"
+			}
+		},
+		"bronze":{
+			"species_name": "Doggo",
+			"income_per_second": 25,
+			"minutes_before_adult": 30,
+			"selling_value": 5000,
+			"visuals":{
+				"baby": "res://Assets/Images/dog_baby2.png",
+				"adult": "res://Assets/Images/dog2.png"
+			}
+		},
+		"silver":{
+			"species_name": "Doggo",
+			"income_per_second": 50,
+			"minutes_before_adult": 30,
+			"selling_value": 7500,
+			"visuals":{
+				"baby": "res://Assets/Images/dog_baby3.png",
+				"adult": "res://Assets/Images/dog3.png"
+			}
+		},
+		"gold":{
+			"species_name": "Doggo",
+			"income_per_second": 100,
+			"minutes_before_adult": 30,
+			"selling_value": 8500,
+			"visuals":{
+				"baby": "res://Assets/Images/dog_baby4.png",
+				"adult": "res://Assets/Images/dog4.png"
+			}
+		},
+		"diamond":{
+			"species_name": "Doggo",
+			"income_per_second": 150,
+			"minutes_before_adult": 30,
+			"selling_value": 10000,
+			"visuals":{
+				"baby": "res://Assets/Images/dog_baby5.png",
+				"adult": "res://Assets/Images/dog5.png"
+			}
+		}
+	},
+	"souris": {
+		"wood":{
+			"species_name": "Pipsqueak",
+			"income_per_second": 5,
+			"minutes_before_adult": 30,
+			"selling_value": 1000,
+			"visuals":{
+				"baby": "res://Assets/Images/souris_baby1.png",
+				"adult": "res://Assets/Images/souris1.png"
+			}
+		},
+		"bronze":{
+			"species_name": "Pipsqueak",
+			"income_per_second": 25,
+			"minutes_before_adult": 30,
+			"selling_value": 5000,
+			"visuals":{
+				"baby": "res://Assets/Images/souris_baby2.png",
+				"adult": "res://Assets/Images/souris2.png"
+			}
+		},
+		"silver":{
+			"species_name": "Pipsqueak",
+			"income_per_second": 50,
+			"minutes_before_adult": 30,
+			"selling_value": 7500,
+			"visuals":{
+				"baby": "res://Assets/Images/souris_baby3.png",
+				"adult": "res://Assets/Images/souris3.png"
+			}
+		},
+		"gold":{
+			"species_name": "Pipsqueak",
+			"income_per_second": 100,
+			"minutes_before_adult": 30,
+			"selling_value": 8500,
+			"visuals":{
+				"baby": "res://Assets/Images/souris_baby4.png",
+				"adult": "res://Assets/Images/souris4.png"
+			}
+		},
+		"diamond":{
+			"species_name": "Pipsqueak",
+			"income_per_second": 150,
+			"minutes_before_adult": 30,
+			"selling_value": 10000,
+			"visuals":{
+				"baby": "res://Assets/Images/souris_baby5.png",
+				"adult": "res://Assets/Images/souris5.png"
+			}
+		}
+	},
+	"owl": {
+		"wood":{
+			"species_name": "Noctowl",
+			"income_per_second": 5,
+			"minutes_before_adult": 30,
+			"selling_value": 1000,
+			"visuals":{
+				"baby": "res://Assets/Images/owl_baby1.png",
+				"adult": "res://Assets/Images/owl1.png"
+			}
+		},
+		"bronze":{
+			"species_name": "Noctowl",
+			"income_per_second": 25,
+			"minutes_before_adult": 30,
+			"selling_value": 5000,
+			"visuals":{
+				"baby": "res://Assets/Images/owl_baby2.png",
+				"adult": "res://Assets/Images/owl2.png"
+			}
+		},
+		"silver":{
+			"species_name": "Noctowl",
+			"income_per_second": 50,
+			"minutes_before_adult": 30,
+			"selling_value": 7500,
+			"visuals":{
+				"baby": "res://Assets/Images/owl_baby3.png",
+				"adult": "res://Assets/Images/owl3.png"
+			}
+		},
+		"gold":{
+			"species_name": "Noctowl",
+			"income_per_second": 100,
+			"minutes_before_adult": 30,
+			"selling_value": 8500,
+			"visuals":{
+				"baby": "res://Assets/Images/owl_baby4.png",
+				"adult": "res://Assets/Images/owl4.png"
+			}
+		},
+		"diamond":{
+			"species_name": "Noctowl",
+			"income_per_second": 150,
+			"minutes_before_adult": 30,
+			"selling_value": 10000,
+			"visuals":{
+				"baby": "res://Assets/Images/owl_baby5.png",
+				"adult": "res://Assets/Images/owl5.png"
+			}
+		}
+	},
+	"gorille": {
+		"wood":{
+			"species_name": "Brutesmash",
+			"income_per_second": 5,
+			"minutes_before_adult": 30,
+			"selling_value": 1000,
+			"visuals":{
+				"baby": "res://Assets/Images/gorille_baby1.png",
+				"adult": "res://Assets/Images/gorille1.png"
+			}
+		},
+		"bronze":{
+			"species_name": "Brutesmash",
+			"income_per_second": 25,
+			"minutes_before_adult": 30,
+			"selling_value": 5000,
+			"visuals":{
+				"baby": "res://Assets/Images/gorille_baby2.png",
+				"adult": "res://Assets/Images/gorille2.png"
+			}
+		},
+		"silver":{
+			"species_name": "Brutesmash",
+			"income_per_second": 50,
+			"minutes_before_adult": 30,
+			"selling_value": 7500,
+			"visuals":{
+				"baby": "res://Assets/Images/gorille_baby3.png",
+				"adult": "res://Assets/Images/gorille3.png"
+			}
+		},
+		"gold":{
+			"species_name": "Brutesmash",
+			"income_per_second": 100,
+			"minutes_before_adult": 30,
+			"selling_value": 8500,
+			"visuals":{
+				"baby": "res://Assets/Images/gorille_baby4.png",
+				"adult": "res://Assets/Images/gorille4.png"
+			}
+		},
+		"diamond":{
+			"species_name": "Brutesmash",
+			"income_per_second": 150,
+			"minutes_before_adult": 30,
+			"selling_value": 10000,
+			"visuals":{
+				"baby": "res://Assets/Images/gorille_baby5.png",
+				"adult": "res://Assets/Images/gorille5.png"
+			}
+		}
+	},
+	"autruche": {
+		"wood":{
+			"species_name": "Featherun",
+			"income_per_second": 5,
+			"minutes_before_adult": 30,
+			"selling_value": 1000,
+			"visuals":{
+				"baby": "res://Assets/Images/autruche_baby1.png",
+				"adult": "res://Assets/Images/autruche1.png"
+			}
+		},
+		"bronze":{
+			"species_name": "Featherun",
+			"income_per_second": 25,
+			"minutes_before_adult": 30,
+			"selling_value": 5000,
+			"visuals":{
+				"baby": "res://Assets/Images/autruche_baby2.png",
+				"adult": "res://Assets/Images/autruche2.png"
+			}
+		},
+		"silver":{
+			"species_name": "Featherun",
+			"income_per_second": 50,
+			"minutes_before_adult": 30,
+			"selling_value": 7500,
+			"visuals":{
+				"baby": "res://Assets/Images/autruche_baby3.png",
+				"adult": "res://Assets/Images/autruche3.png"
+			}
+		},
+		"gold":{
+			"species_name": "Featherun",
+			"income_per_second": 100,
+			"minutes_before_adult": 30,
+			"selling_value": 8500,
+			"visuals":{
+				"baby": "res://Assets/Images/autruche_baby4.png",
+				"adult": "res://Assets/Images/autruche4.png"
+			}
+		},
+		"diamond":{
+			"species_name": "Featherun",
+			"income_per_second": 150,
+			"minutes_before_adult": 30,
+			"selling_value": 10000,
+			"visuals":{
+				"baby": "res://Assets/Images/autruche_baby5.png",
+				"adult": "res://Assets/Images/autruche5.png"
+			}
+		}
+	},
 }
 
 func format_time(minutes: float) -> String:

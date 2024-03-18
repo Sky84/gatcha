@@ -60,6 +60,10 @@ func _on_pressed_shop_item(shop_item: ShopItem):
 
 func _handle_euros_payment(shop_item: ShopItem):
 	PayService.purchase(shop_item.item_id);
+	var purchased_item = await PayService.on_purchased_success;
+	var diamond = Diamonds.Diamonds[purchased_item.id].duplicate(true);
+	Player.diamond += diamond.amount_to_give * purchased_item.amount;
+	Player.update_HUD();
 
 func _on_boost_buy(boost_shop_item: ShopItem):
 	Player.add_boost(boost_shop_item.item_id, boost_shop_item._object_data);

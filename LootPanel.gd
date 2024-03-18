@@ -27,7 +27,10 @@ func _process_loot_rate(shop_item_data):
 		creature.id = generate_creature_id(get_child_count(), creature);
 		creature.looted_time_seconds = Time.get_unix_time_from_system();
 		instance_loot.init_item(creature);
-		update_loot_node_position(instance_loot);
+		var instance_target_position = Vector2.ZERO;
+		if loot_type == "gold" or loot_type == "diamond":
+			instance_loot.play_epic_animations();
+		update_loot_node_position(instance_loot, instance_target_position);
 		opened_loot_item.append(instance_loot);
 		instance_loot.pressed.connect(_on_instance_loot_pressed.bind(instance_loot));
 	else:
@@ -48,12 +51,12 @@ func _on_instance_loot_pressed(instance_loot: LootItem):
 	Player.add_creature(instance_loot.current_item);
 	Save.save_data();
 
-func update_loot_node_position(instance_loot: TextureButton):
+func update_loot_node_position(instance_loot: TextureButton, target_position: Vector2 = Vector2.ZERO):
 	instance_loot.scale = Vector2.ZERO;
 	var margin = 30; 
 	var target_pos_x = ((opened_loot_item.size() % 3) * 340) + margin;
 	var target_pos_y = ((opened_loot_item.size() / 3) * 340) + margin;
-	var target_pos = Vector2(target_pos_x, target_pos_y);
+	var target_pos = Vector2(target_pos_x, target_pos_y) if target_position == Vector2.ZERO else target_position;
 	var tween = get_tree().create_tween();
 	tween.set_parallel();
 	tween.tween_property(instance_loot, "position", target_pos, 0.5).set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_IN_OUT);

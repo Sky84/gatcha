@@ -150,6 +150,30 @@ grow_vertical = 0
 mouse_filter = 1
 script = ExtResource("1_dwfql")
 
+[node name="LootPanel" type="Control" parent="CanvasLayer/Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("3_3eft4")
+
+[node name="StartLootPosition" type="Control" parent="CanvasLayer/Menu/LootPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 271.0
+offset_right = 20.0
+offset_bottom = 303.0
+grow_horizontal = 2
+grow_vertical = 0
+
 [node name="TabContainer" type="TabContainer" parent="CanvasLayer/Menu"]
 layout_mode = 1
 anchors_preset = 12
@@ -357,31 +381,6 @@ pivot_offset = Vector2(46, 46)
 texture_normal = ExtResource("13_ta6gt")
 ignore_texture_size = true
 stretch_mode = 5
-
-[node name="LootPanel" type="Control" parent="CanvasLayer/Menu"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -685.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-script = ExtResource("3_3eft4")
-
-[node name="StartLootPosition" type="Control" parent="CanvasLayer/Menu/LootPanel"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = 271.0
-offset_right = 20.0
-offset_bottom = 303.0
-grow_horizontal = 2
-grow_vertical = 0
 
 [node name="PetDexPanel" type="Control" parent="CanvasLayer/Menu"]
 layout_mode = 1
