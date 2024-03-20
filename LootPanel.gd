@@ -16,26 +16,25 @@ func open(shop_item: ShopItem):
 	_process_loot_rate(shop_item_data);
 
 func _process_loot_rate(shop_item_data):
-	if opened_loot_item.size() < 9:
-		var loot_type: String = get_lootbox_type(shop_item_data);
-		var creature = get_random_creature().duplicate(true);
-		var instance_loot: LootItem = LOOT_ITEM.instantiate();
-		add_child(instance_loot);
-		instance_loot.position = start_loot_position;
-		creature.type = loot_type;
-		creature.age = "baby";
-		creature.id = generate_creature_id(get_child_count(), creature);
-		creature.looted_time_seconds = Time.get_unix_time_from_system();
-		instance_loot.init_item(creature);
-		var instance_target_position = Vector2.ZERO;
-		if loot_type == "gold" or loot_type == "diamond":
-			instance_loot.play_epic_animations();
-		update_loot_node_position(instance_loot, instance_target_position);
-		opened_loot_item.append(instance_loot);
-		instance_loot.pressed.connect(_on_instance_loot_pressed.bind(instance_loot));
-	else:
+	if opened_loot_item.size() >= 9:
 		for i in range(opened_loot_item.size() -1, -1, -1):
 			_on_instance_loot_pressed(opened_loot_item[i]);
+	var loot_type: String = get_lootbox_type(shop_item_data);
+	var creature = get_random_creature().duplicate(true);
+	var instance_loot: LootItem = LOOT_ITEM.instantiate();
+	add_child(instance_loot);
+	instance_loot.position = start_loot_position;
+	creature.type = loot_type;
+	creature.age = "baby";
+	creature.id = generate_creature_id(get_child_count(), creature);
+	creature.looted_time_seconds = Time.get_unix_time_from_system();
+	instance_loot.init_item(creature);
+	var instance_target_position = Vector2.ZERO;
+	if loot_type == "gold" or loot_type == "diamond":
+		instance_loot.play_epic_animations();
+	update_loot_node_position(instance_loot, instance_target_position);
+	opened_loot_item.append(instance_loot);
+	instance_loot.pressed.connect(_on_instance_loot_pressed.bind(instance_loot));
 
 func generate_creature_id(instance_index, creature_data) -> String:
 	return str(instance_index)+str(Player.current_creatures.size())+"_"+creature_data.type+"_"+creature_data[creature_data.type].species_name+"_"+str(Time.get_ticks_msec());
@@ -53,9 +52,9 @@ func _on_instance_loot_pressed(instance_loot: LootItem):
 
 func update_loot_node_position(instance_loot: TextureButton, target_position: Vector2 = Vector2.ZERO):
 	instance_loot.scale = Vector2.ZERO;
-	var margin = 30; 
-	var target_pos_x = ((opened_loot_item.size() % 3) * 340) + margin;
-	var target_pos_y = ((opened_loot_item.size() / 3) * 340) + margin;
+	var margin = Vector2(30, 60);
+	var target_pos_x = ((opened_loot_item.size() % 3) * 340) + margin.x;
+	var target_pos_y = ((opened_loot_item.size() / 3) * 340) + margin.y;
 	var target_pos = Vector2(target_pos_x, target_pos_y) if target_position == Vector2.ZERO else target_position;
 	var tween = get_tree().create_tween();
 	tween.set_parallel();

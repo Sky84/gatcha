@@ -5,7 +5,7 @@ const save_path = "user://player.save";
 const DEFAULT_SAVE = {
 			"current_creatures": [],
 			"petdex": [],
-			"coin": 10
+			"coin": 2000
 		};
 
 func get_save():

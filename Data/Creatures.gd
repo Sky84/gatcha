@@ -12,7 +12,7 @@ var Creatures = {
 		"wood":{
 			"species_name": "Bebeble",
 			"income_per_second": 5,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 5,
 			"selling_value": 1000,
 			"visuals":{
 				"baby": "res://Assets/Images/bebeble_baby1.png",
@@ -22,7 +22,7 @@ var Creatures = {
 		"bronze":{
 			"species_name": "Bebeble",
 			"income_per_second": 25,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 20,
 			"selling_value": 5000,
 			"visuals":{
 				"baby": "res://Assets/Images/bebeble_baby2.png",
@@ -32,7 +32,7 @@ var Creatures = {
 		"silver":{
 			"species_name": "Bebeble",
 			"income_per_second": 50,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 40,
 			"selling_value": 7500,
 			"visuals":{
 				"baby": "res://Assets/Images/bebeble_baby3.png",
@@ -42,7 +42,7 @@ var Creatures = {
 		"gold":{
 			"species_name": "Bebeble",
 			"income_per_second": 100,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 50,
 			"selling_value": 8500,
 			"visuals":{
 				"baby": "res://Assets/Images/bebeble_baby3.png",
@@ -52,7 +52,7 @@ var Creatures = {
 		"diamond":{
 			"species_name": "Bebeble",
 			"income_per_second": 150,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 70,
 			"selling_value": 10000,
 			"visuals":{
 				"baby": "res://Assets/Images/bebeble_baby3.png",
@@ -64,7 +64,7 @@ var Creatures = {
 		"wood":{
 			"species_name": "Ploupy",
 			"income_per_second": 5,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 5,
 			"selling_value": 1000,
 			"visuals":{
 				"baby": "res://Assets/Images/ploupy_baby1.png",
@@ -74,7 +74,7 @@ var Creatures = {
 		"bronze":{
 			"species_name": "Ploupy",
 			"income_per_second": 25,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 20,
 			"selling_value": 5000,
 			"visuals":{
 				"baby": "res://Assets/Images/ploupy_baby2.png",
@@ -84,7 +84,7 @@ var Creatures = {
 		"silver":{
 			"species_name": "Ploupy",
 			"income_per_second": 50,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 40,
 			"selling_value": 7500,
 			"visuals":{
 				"baby": "res://Assets/Images/ploupy_baby3.png",
@@ -94,7 +94,7 @@ var Creatures = {
 		"gold":{
 			"species_name": "Ploupy",
 			"income_per_second": 100,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 50,
 			"selling_value": 8500,
 			"visuals":{
 				"baby": "res://Assets/Images/ploupy_baby3.png",
@@ -104,7 +104,7 @@ var Creatures = {
 		"diamond":{
 			"species_name": "Ploupy",
 			"income_per_second": 150,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 70,
 			"selling_value": 10000,
 			"visuals":{
 				"baby": "res://Assets/Images/ploupy_baby3.png",
@@ -116,7 +116,7 @@ var Creatures = {
 		"wood":{
 			"species_name": "Lee-zar",
 			"income_per_second": 5,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 5,
 			"selling_value": 1000,
 			"visuals":{
 				"baby": "res://Assets/Images/lezar_baby1.png",
@@ -126,7 +126,7 @@ var Creatures = {
 		"bronze":{
 			"species_name": "Lee-zar",
 			"income_per_second": 25,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 20,
 			"selling_value": 5000,
 			"visuals":{
 				"baby": "res://Assets/Images/lezar_baby2.png",
@@ -136,7 +136,7 @@ var Creatures = {
 		"silver":{
 			"species_name": "Lee-zar",
 			"income_per_second": 50,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 40,
 			"selling_value": 7500,
 			"visuals":{
 				"baby": "res://Assets/Images/lezar_baby3.png",
@@ -146,7 +146,7 @@ var Creatures = {
 		"gold":{
 			"species_name": "Lee-zar",
 			"income_per_second": 100,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 50,
 			"selling_value": 8500,
 			"visuals":{
 				"baby": "res://Assets/Images/lezar_baby3.png",
@@ -156,7 +156,7 @@ var Creatures = {
 		"diamond":{
 			"species_name": "Lee-zar",
 			"income_per_second": 150,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 70,
 			"selling_value": 10000,
 			"visuals":{
 				"baby": "res://Assets/Images/lezar_baby3.png",
@@ -168,7 +168,7 @@ var Creatures = {
 		"wood":{
 			"species_name": "Oursi",
 			"income_per_second": 5,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 5,
 			"selling_value": 1000,
 			"visuals":{
 				"baby": "res://Assets/Images/bear_baby1.png",
@@ -178,7 +178,7 @@ var Creatures = {
 		"bronze":{
 			"species_name": "Oursi",
 			"income_per_second": 25,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 20,
 			"selling_value": 5000,
 			"visuals":{
 				"baby": "res://Assets/Images/bear_baby2.png",
@@ -188,7 +188,7 @@ var Creatures = {
 		"silver":{
 			"species_name": "Oursi",
 			"income_per_second": 50,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 40,
 			"selling_value": 7500,
 			"visuals":{
 				"baby": "res://Assets/Images/bear_baby3.png",
@@ -198,7 +198,7 @@ var Creatures = {
 		"gold":{
 			"species_name": "Oursi",
 			"income_per_second": 100,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 50,
 			"selling_value": 8500,
 			"visuals":{
 				"baby": "res://Assets/Images/bear_baby3.png",
@@ -208,7 +208,7 @@ var Creatures = {
 		"diamond":{
 			"species_name": "Oursi",
 			"income_per_second": 150,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 70,
 			"selling_value": 10000,
 			"visuals":{
 				"baby": "res://Assets/Images/bear_baby3.png",
@@ -220,7 +220,7 @@ var Creatures = {
 		"wood":{
 			"species_name": "Cerfo",
 			"income_per_second": 5,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 5,
 			"selling_value": 1000,
 			"visuals":{
 				"baby": "res://Assets/Images/cerf_baby1.png",
@@ -230,7 +230,7 @@ var Creatures = {
 		"bronze":{
 			"species_name": "Cerfo",
 			"income_per_second": 25,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 20,
 			"selling_value": 5000,
 			"visuals":{
 				"baby": "res://Assets/Images/cerf_baby2.png",
@@ -240,7 +240,7 @@ var Creatures = {
 		"silver":{
 			"species_name": "Cerfo",
 			"income_per_second": 50,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 40,
 			"selling_value": 7500,
 			"visuals":{
 				"baby": "res://Assets/Images/cerf_baby3.png",
@@ -250,7 +250,7 @@ var Creatures = {
 		"gold":{
 			"species_name": "Cerfo",
 			"income_per_second": 100,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 50,
 			"selling_value": 8500,
 			"visuals":{
 				"baby": "res://Assets/Images/cerf_baby3.png",
@@ -260,7 +260,7 @@ var Creatures = {
 		"diamond":{
 			"species_name": "Cerfo",
 			"income_per_second": 150,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 70,
 			"selling_value": 10000,
 			"visuals":{
 				"baby": "res://Assets/Images/cerf_baby3.png",
@@ -272,7 +272,7 @@ var Creatures = {
 		"wood":{
 			"species_name": "Piaff",
 			"income_per_second": 5,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 5,
 			"selling_value": 1000,
 			"visuals":{
 				"baby": "res://Assets/Images/piaff_baby1.png",
@@ -282,7 +282,7 @@ var Creatures = {
 		"bronze":{
 			"species_name": "Piaff",
 			"income_per_second": 25,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 20,
 			"selling_value": 5000,
 			"visuals":{
 				"baby": "res://Assets/Images/piaff_baby2.png",
@@ -292,7 +292,7 @@ var Creatures = {
 		"silver":{
 			"species_name": "Piaff",
 			"income_per_second": 50,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 40,
 			"selling_value": 7500,
 			"visuals":{
 				"baby": "res://Assets/Images/piaff_baby3.png",
@@ -302,7 +302,7 @@ var Creatures = {
 		"gold":{
 			"species_name": "Piaff",
 			"income_per_second": 100,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 50,
 			"selling_value": 8500,
 			"visuals":{
 				"baby": "res://Assets/Images/piaff_baby3.png",
@@ -312,7 +312,7 @@ var Creatures = {
 		"diamond":{
 			"species_name": "Piaff",
 			"income_per_second": 150,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 70,
 			"selling_value": 10000,
 			"visuals":{
 				"baby": "res://Assets/Images/piaff_baby3.png",
@@ -324,7 +324,7 @@ var Creatures = {
 		"wood":{
 			"species_name": "Snaky",
 			"income_per_second": 5,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 5,
 			"selling_value": 1000,
 			"visuals":{
 				"baby": "res://Assets/Images/snakecartpillar_baby1.png",
@@ -334,7 +334,7 @@ var Creatures = {
 		"bronze":{
 			"species_name": "Snaky",
 			"income_per_second": 25,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 20,
 			"selling_value": 5000,
 			"visuals":{
 				"baby": "res://Assets/Images/snakecartpillar_baby2.png",
@@ -344,7 +344,7 @@ var Creatures = {
 		"silver":{
 			"species_name": "Snaky",
 			"income_per_second": 50,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 40,
 			"selling_value": 7500,
 			"visuals":{
 				"baby": "res://Assets/Images/snakecartpillar_baby3.png",
@@ -354,7 +354,7 @@ var Creatures = {
 		"gold":{
 			"species_name": "Snaky",
 			"income_per_second": 100,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 50,
 			"selling_value": 8500,
 			"visuals":{
 				"baby": "res://Assets/Images/snakecartpillar_baby3.png",
@@ -364,7 +364,7 @@ var Creatures = {
 		"diamond":{
 			"species_name": "Snaky",
 			"income_per_second": 150,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 70,
 			"selling_value": 10000,
 			"visuals":{
 				"baby": "res://Assets/Images/snakecartpillar_baby3.png",
@@ -376,7 +376,7 @@ var Creatures = {
 		"wood":{
 			"species_name": "Doggo",
 			"income_per_second": 5,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 5,
 			"selling_value": 1000,
 			"visuals":{
 				"baby": "res://Assets/Images/dog_baby1.png",
@@ -386,7 +386,7 @@ var Creatures = {
 		"bronze":{
 			"species_name": "Doggo",
 			"income_per_second": 25,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 20,
 			"selling_value": 5000,
 			"visuals":{
 				"baby": "res://Assets/Images/dog_baby2.png",
@@ -396,7 +396,7 @@ var Creatures = {
 		"silver":{
 			"species_name": "Doggo",
 			"income_per_second": 50,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 40,
 			"selling_value": 7500,
 			"visuals":{
 				"baby": "res://Assets/Images/dog_baby3.png",
@@ -406,7 +406,7 @@ var Creatures = {
 		"gold":{
 			"species_name": "Doggo",
 			"income_per_second": 100,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 50,
 			"selling_value": 8500,
 			"visuals":{
 				"baby": "res://Assets/Images/dog_baby4.png",
@@ -416,7 +416,7 @@ var Creatures = {
 		"diamond":{
 			"species_name": "Doggo",
 			"income_per_second": 150,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 70,
 			"selling_value": 10000,
 			"visuals":{
 				"baby": "res://Assets/Images/dog_baby5.png",
@@ -428,7 +428,7 @@ var Creatures = {
 		"wood":{
 			"species_name": "Pipsqueak",
 			"income_per_second": 5,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 5,
 			"selling_value": 1000,
 			"visuals":{
 				"baby": "res://Assets/Images/souris_baby1.png",
@@ -438,7 +438,7 @@ var Creatures = {
 		"bronze":{
 			"species_name": "Pipsqueak",
 			"income_per_second": 25,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 20,
 			"selling_value": 5000,
 			"visuals":{
 				"baby": "res://Assets/Images/souris_baby2.png",
@@ -448,7 +448,7 @@ var Creatures = {
 		"silver":{
 			"species_name": "Pipsqueak",
 			"income_per_second": 50,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 40,
 			"selling_value": 7500,
 			"visuals":{
 				"baby": "res://Assets/Images/souris_baby3.png",
@@ -458,7 +458,7 @@ var Creatures = {
 		"gold":{
 			"species_name": "Pipsqueak",
 			"income_per_second": 100,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 50,
 			"selling_value": 8500,
 			"visuals":{
 				"baby": "res://Assets/Images/souris_baby4.png",
@@ -468,7 +468,7 @@ var Creatures = {
 		"diamond":{
 			"species_name": "Pipsqueak",
 			"income_per_second": 150,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 70,
 			"selling_value": 10000,
 			"visuals":{
 				"baby": "res://Assets/Images/souris_baby5.png",
@@ -480,7 +480,7 @@ var Creatures = {
 		"wood":{
 			"species_name": "Noctowl",
 			"income_per_second": 5,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 5,
 			"selling_value": 1000,
 			"visuals":{
 				"baby": "res://Assets/Images/owl_baby1.png",
@@ -490,7 +490,7 @@ var Creatures = {
 		"bronze":{
 			"species_name": "Noctowl",
 			"income_per_second": 25,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 20,
 			"selling_value": 5000,
 			"visuals":{
 				"baby": "res://Assets/Images/owl_baby2.png",
@@ -500,7 +500,7 @@ var Creatures = {
 		"silver":{
 			"species_name": "Noctowl",
 			"income_per_second": 50,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 40,
 			"selling_value": 7500,
 			"visuals":{
 				"baby": "res://Assets/Images/owl_baby3.png",
@@ -510,7 +510,7 @@ var Creatures = {
 		"gold":{
 			"species_name": "Noctowl",
 			"income_per_second": 100,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 50,
 			"selling_value": 8500,
 			"visuals":{
 				"baby": "res://Assets/Images/owl_baby4.png",
@@ -520,7 +520,7 @@ var Creatures = {
 		"diamond":{
 			"species_name": "Noctowl",
 			"income_per_second": 150,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 70,
 			"selling_value": 10000,
 			"visuals":{
 				"baby": "res://Assets/Images/owl_baby5.png",
@@ -532,7 +532,7 @@ var Creatures = {
 		"wood":{
 			"species_name": "Brutesmash",
 			"income_per_second": 5,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 5,
 			"selling_value": 1000,
 			"visuals":{
 				"baby": "res://Assets/Images/gorille_baby1.png",
@@ -542,7 +542,7 @@ var Creatures = {
 		"bronze":{
 			"species_name": "Brutesmash",
 			"income_per_second": 25,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 20,
 			"selling_value": 5000,
 			"visuals":{
 				"baby": "res://Assets/Images/gorille_baby2.png",
@@ -552,7 +552,7 @@ var Creatures = {
 		"silver":{
 			"species_name": "Brutesmash",
 			"income_per_second": 50,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 40,
 			"selling_value": 7500,
 			"visuals":{
 				"baby": "res://Assets/Images/gorille_baby3.png",
@@ -562,7 +562,7 @@ var Creatures = {
 		"gold":{
 			"species_name": "Brutesmash",
 			"income_per_second": 100,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 50,
 			"selling_value": 8500,
 			"visuals":{
 				"baby": "res://Assets/Images/gorille_baby4.png",
@@ -572,7 +572,7 @@ var Creatures = {
 		"diamond":{
 			"species_name": "Brutesmash",
 			"income_per_second": 150,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 70,
 			"selling_value": 10000,
 			"visuals":{
 				"baby": "res://Assets/Images/gorille_baby5.png",
@@ -584,7 +584,7 @@ var Creatures = {
 		"wood":{
 			"species_name": "Featherun",
 			"income_per_second": 5,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 5,
 			"selling_value": 1000,
 			"visuals":{
 				"baby": "res://Assets/Images/autruche_baby1.png",
@@ -594,7 +594,7 @@ var Creatures = {
 		"bronze":{
 			"species_name": "Featherun",
 			"income_per_second": 25,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 20,
 			"selling_value": 5000,
 			"visuals":{
 				"baby": "res://Assets/Images/autruche_baby2.png",
@@ -604,7 +604,7 @@ var Creatures = {
 		"silver":{
 			"species_name": "Featherun",
 			"income_per_second": 50,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 40,
 			"selling_value": 7500,
 			"visuals":{
 				"baby": "res://Assets/Images/autruche_baby3.png",
@@ -614,7 +614,7 @@ var Creatures = {
 		"gold":{
 			"species_name": "Featherun",
 			"income_per_second": 100,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 50,
 			"selling_value": 8500,
 			"visuals":{
 				"baby": "res://Assets/Images/autruche_baby4.png",
@@ -624,7 +624,7 @@ var Creatures = {
 		"diamond":{
 			"species_name": "Featherun",
 			"income_per_second": 150,
-			"minutes_before_adult": 30,
+			"minutes_before_adult": 70,
 			"selling_value": 10000,
 			"visuals":{
 				"baby": "res://Assets/Images/autruche_baby5.png",

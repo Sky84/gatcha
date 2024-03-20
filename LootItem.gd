@@ -33,7 +33,6 @@ func init_item(item_data):
 	set_rarity_type(item_data.type);
 
 func play_epic_animations():
-	print(current_item.type)
 	animation_player.stop();
 	animation_player.play(current_item.type+"_loot");
 

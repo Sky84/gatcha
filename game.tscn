@@ -202,7 +202,7 @@ offset_left = 55.0
 offset_top = 107.0
 offset_right = 1065.0
 offset_bottom = 581.0
-scroll_horizontal = 3210
+scroll_horizontal = 100
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/Menu/TabContainer/Shop/ScrollContainer"]
 custom_minimum_size = Vector2(1014, 442.21)

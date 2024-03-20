@@ -43,18 +43,23 @@ func play_anim_blocked():
 func _update_item(item_price: float, item_image_url: String, item_name: String, item_money_type_texture: String):
 	var texture_rect: TextureRect = get_node('TextureRect');
 	var texture_coin_type = get_node("Price/TextureRect");
+	texture_coin_type.hide();
 	var name_label: Label = get_node('Name');
 	var price_label: Label = get_node('Price');
 	texture_rect.texture = load(item_image_url);
 	name_label.text = item_name;
-	price_label.text = str(item_price);
-	texture_coin_type.texture = load(item_money_type_texture);
+	if not item_money_type_texture.is_empty():
+		price_label.text = str(item_price);
+		texture_coin_type.show();
+		texture_coin_type.texture = load(item_money_type_texture);
+	else:
+		price_label.text = str(item_price)+"€";
 
 func _on_export_var_changes():
 	var item_price: float = 0;
 	var item_image_url: String = "res://icon.svg";
 	var item_name: String = 'No Name';
-	var item_money_type_texture = "res://icon.svg";
+	var item_money_type_texture: String;
 	if not _item_id.is_empty():
 		match _item_type:
 			ITEM_TYPE.BOOST:

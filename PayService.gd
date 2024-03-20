@@ -85,6 +85,7 @@ func _on_purchase_consumption_error():
 	print("_on_purchase_consumption_error");
 
 func _process_purchase(purchase):
+	print(purchase)
 	if purchase.purchase_state == PurchaseState.PURCHASED:
 		on_purchased_success.emit({"amount":purchase.amount, "id": purchase.productId});
 

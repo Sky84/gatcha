@@ -3,7 +3,7 @@ const LootBoxes = {
 	"wood": {
 		"name": "Wood",
 		"visual": "res://LootBoxes/WoodLootbox.png",
-		"price": 10,
+		"price": 1100,
 		"money_type_id": "coin",
 		"wood_loot_rate": 90,
 		"bronze_loot_rate": 5,
@@ -14,7 +14,7 @@ const LootBoxes = {
 	"bronze": {
 		"name": "Bronze",
 		"visual": "res://LootBoxes/BronzeLootbox.png",
-		"price": 50,
+		"price": 5100,
 		"money_type_id": "coin",
 		"wood_loot_rate": 80,
 		"bronze_loot_rate": 10,
@@ -25,7 +25,7 @@ const LootBoxes = {
 	"silver": {
 		"name": "Silver",
 		"visual": "res://LootBoxes/SilverLootbox.png",
-		"price": 100,
+		"price": 8000,
 		"money_type_id": "coin",
 		"wood_loot_rate": 50,
 		"bronze_loot_rate": 30,
