@@ -87,7 +87,8 @@ func _on_purchase_consumption_error():
 func _process_purchase(purchase):
 	print(purchase)
 	if purchase.purchase_state == PurchaseState.PURCHASED:
-		on_purchased_success.emit({"amount":purchase.amount, "id": purchase.productId});
+		payment.consumePurchase(purchase.purchase_token);
+		on_purchased_success.emit({"amount":purchase.quantity, "id": purchase.sku});
 
 func _on_connected():
 	payment.querySkuDetails(Diamonds.Diamonds.keys(), "inapp") # "subs" for subscriptions
