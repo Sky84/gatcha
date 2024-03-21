@@ -115,6 +115,7 @@ func _on_close_button_pressed():
 	tween.tween_property(tab_buttons, "position:y", tab_buttons_target_pos_y, 0.6).set_trans(Tween.TRANS_BACK);
 
 func _change_tab(index: int):
+	loot_panel.collect_all_loot();
 	var tween = create_tween();
 	var button_clicked = tab_buttons.get_child(index);
 	var not_clicked_pos_y = 8;

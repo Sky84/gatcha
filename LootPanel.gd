@@ -5,8 +5,7 @@ const LOOT_ITEM = preload("res://LootBoxes/loot_item.tscn");
 
 var opened_loot_item: Array = [];
 
-var wait_is_looting_anim_process = false;
-signal is_looting_anim_process;
+signal on_all_loot_collected;
 
 @onready var start_loot_position: Vector2 = $StartLootPosition.global_position;
 
@@ -15,10 +14,14 @@ func open(shop_item: ShopItem):
 	var shop_item_data = shop_item.get_object_data();
 	_process_loot_rate(shop_item_data);
 
+func collect_all_loot():
+	for i in range(opened_loot_item.size() -1, -1, -1):
+		_on_instance_loot_pressed(opened_loot_item[i]);
+	on_all_loot_collected.emit();
+
 func _process_loot_rate(shop_item_data):
 	if opened_loot_item.size() >= 9:
-		for i in range(opened_loot_item.size() -1, -1, -1):
-			_on_instance_loot_pressed(opened_loot_item[i]);
+		collect_all_loot();
 	var loot_type: String = get_lootbox_type(shop_item_data);
 	var creature = get_random_creature().duplicate(true);
 	var instance_loot: LootItem = LOOT_ITEM.instantiate();

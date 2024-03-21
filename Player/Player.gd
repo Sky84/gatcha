@@ -14,6 +14,7 @@ var diamond = 0;
 var boosts = {};
 
 signal on_boosted_creature;
+signal on_creature_added;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,6 +34,7 @@ func add_creature(creature_data: Dictionary, from_save: bool = false):
 	creature_instance.global_position = random_position;
 	creature_instance.init_creature(creature_data);
 	creature_instance.init_pathfinding(creature_container.size);
+	on_creature_added.emit();
 	update_HUD();
 
 func set_lock_creature(creature, lock: bool) -> void:

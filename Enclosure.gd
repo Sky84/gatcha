@@ -5,20 +5,23 @@ const ENCLOSURE_CREATURE_ITEM = preload("res://Buttons/enclosure_creature_item.t
 
 func _ready():
 	Player.on_boosted_creature.connect(_on_boosted_creature);
+	Player.on_creature_added.connect(_update_buttons);
 
 # When tab change, the visibility change too
 func _on_visibility_changed():
+	_update_buttons();
+
+func _update_buttons():
+	for child in grid_container.get_children():
+		child.sell_creature_pressed.disconnect(_on_sell_creature_pressed.bind(child));
+		grid_container.remove_child(child);
+		child.queue_free();
 	if visible:
 		for creature in Player.current_creatures:
 			var instance = ENCLOSURE_CREATURE_ITEM.instantiate();
 			grid_container.add_child(instance);
 			instance.init_item(creature);
 			instance.sell_creature_pressed.connect(_on_sell_creature_pressed.bind(instance));
-	else:
-		for child in grid_container.get_children():
-			child.sell_creature_pressed.disconnect(_on_sell_creature_pressed.bind(child));
-			grid_container.remove_child(child);
-			child.queue_free();
 
 func _on_boosted_creature(creature_id: String, time_minutes_to_reduce: int):
 	for instance in grid_container.get_children():
