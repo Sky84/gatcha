@@ -57,7 +57,7 @@ func _update_item(item_price: float, item_image_url: String, item_name: String, 
 
 func _on_export_var_changes():
 	var item_price: float = 0;
-	var item_image_url: String = "res://icon.svg";
+	var item_image_url: String = "res://icon.png";
 	var item_name: String = 'No Name';
 	var item_money_type_texture: String;
 	if not _item_id.is_empty():
